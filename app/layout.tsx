@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
+import { Fira_Code } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
+import IDEBox from "@/components/IDEBox/IDEBox";
+import GradientCanvas from "@/components/GradientBackground/GradientCanvas";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
   subsets: ["latin"],
 });
 
@@ -25,9 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${instrumentSans.variable} ${firaCode.variable} antialiased`}
       >
-        {children}
+        <main className="flex flex-grow w-screen h-screen it items-center justify-center p-0 sm:p-10">
+          <IDEBox>
+            {children}
+          </IDEBox>
+          <GradientCanvas />
+        </main>
       </body>
     </html>
   );
