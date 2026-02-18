@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
 import { Fira_Code } from "next/font/google";
-// @ts-ignore
+import localFont from "next/font/local";
 import "./globals.css";
-import IDEBox from "@/components/IDEBox/IDEBox";
-import GradientCanvas from "@/components/GradientBackground/GradientCanvas";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  subsets: ["latin"],
+const generalSans = localFont({
+  src: "./fonts/GeneralSans-Variable.woff2",
+  display: "swap",
+  variable: "--font-general-sans",
 });
 
 const firaCode = Fira_Code({
@@ -29,14 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${instrumentSans.variable} ${firaCode.variable} antialiased`}
+        className={`${generalSans.variable} ${firaCode.variable} antialiased`}
       >
-        <main className="flex flex-grow w-screen h-screen it items-center justify-center p-0 sm:p-10">
-          <IDEBox>
-            {children}
-          </IDEBox>
-          <GradientCanvas />
-        </main>
+        {children}
       </body>
     </html>
   );
