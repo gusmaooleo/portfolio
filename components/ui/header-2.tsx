@@ -41,7 +41,7 @@ export function Header() {
     },
     {
       label: "Contact-me",
-      href: "#contact",
+      href: "#contact-me",
     },
   ];
 
