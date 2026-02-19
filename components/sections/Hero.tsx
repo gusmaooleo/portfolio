@@ -1,38 +1,20 @@
 "use client";
 
 import React from "react";
-import { ArrowDown, Globe } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import HeroAnimation from "@/components/sections/hero/HeroAnimation";
-import DotPulse from "./hero/DotPulse";
+import DynamicClock from "./hero/DynamicClock";
+import { SystemStatus } from "./hero/SystemStatus";
+import { CursorFollower } from "../ui/cursor-follower";
 import TextScramble from "../ui/text-scramble";
 
 export function Hero() {
   return (
     <section className="relative w-full min-h-[110vh] overflow-hidden bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans -mt-16 md:-mt-20 transition-colors duration-500">
+      <CursorFollower />
       <div className="relative w-full min-h-screen flex flex-col md:grid md:grid-cols-2 pt-24 px-6 md:px-12 z-10 transition-colors duration-500">
         <div className="flex flex-col justify-center h-full space-y-12 md:space-y-24 z-20 relative p-4 xl:pl-50">
-          <div className="flex flex-col gap-1 text-xs md:text-sm font-mono text-zinc-500 dark:text-zinc-400 xl:absolute xl:top-20 tracking-tight">
-            <div>devleoper</div>
-            <div className="flex items-center gap-3">
-              <span className="font-bold text-orange-500 dark:text-orange-400">
-                🇧🇷 br
-              </span>
-              <Globe className="w-3 h-3" />
-              <span>
-                {new Date().toLocaleTimeString("pt-BR", {
-                  timeZone: "America/Sao_Paulo",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })}{" "}
-                <span className="text-xs">-3</span>
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <DotPulse />
-              Worldwide
-            </div>
-          </div>
+          <DynamicClock />
 
           <div className="space-y-4">
             <h2 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-zinc-200 tracking-tight">
@@ -73,8 +55,8 @@ export function Hero() {
         </div>
 
         <div className="absolute inset-0 md:relative w-full h-full flex items-end justify-end md:items-center md:justify-center md:pb-0 md:pr-0 z-0 text-zinc-400 dark:text-zinc-600 pointer-events-none md:pointer-events-auto">
-          <div className="xl:absolute xl:top-20 xl:right-50 text-xs font-mono text-zinc-500 dark:text-zinc-500">
-            personal portfolio&quot;
+          <div className="absolute bottom-8 right-8 xl:absolute xl:bottom-30 xl:right-50">
+            <SystemStatus />
           </div>
         </div>
       </div>

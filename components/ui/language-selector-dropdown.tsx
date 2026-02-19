@@ -50,7 +50,11 @@ export const LanguageSelectorDropdown = () => {
       {open && (
         <div
           className={cn(
-            "absolute right-0 mt-2 w-48 rounded-xl overflow-hidden",
+            "absolute w-48 rounded-xl overflow-hidden",
+            // Mobile: Up and Right (aligned-left)
+            "bottom-full mb-2 left-0 origin-bottom-left",
+            // Desktop: Down and Left (aligned-right)
+            "md:top-full md:mt-2 md:right-0 md:left-auto md:bottom-auto md:mb-0 md:origin-top-right",
             "bg-white/90 dark:bg-neutral-900/95 backdrop-blur-xl",
             "shadow-lg border border-gray-200 dark:border-neutral-700",
             "animate-fade-in",
