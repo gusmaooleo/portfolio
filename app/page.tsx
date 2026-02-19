@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Header } from "@/components/ui/header-2";
 import { StackSection } from "@/components/sections/Stack";
 import { ContactMe } from "@/components/sections/ContactMe";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ProjectsSection />
       <StackSection />
       <ContactMe />
+      <Footer />
     </main>
   );
 }

@@ -5,7 +5,6 @@ import { PixelTrail } from "../ui/pixel-trail";
 import { PersonalBadge } from "./contact-me/PersonalBadge";
 import { SystemIdMeta } from "./contact-me/SystemIdMeta";
 import { ContactCard } from "./contact-me/ContactCard";
-import { SiteFooter } from "./contact-me/SiteFooter";
 
 export function ContactMe() {
   const badgeContainerRef = useRef<HTMLDivElement>(null);
@@ -85,9 +84,7 @@ export function ContactMe() {
       </div>
 
       {/* Footer Bar */}
-      <div className="h-[60px] absolute bottom-0 w-full bg-zinc-50 dark:bg-zinc-950">
-        <SiteFooter />
-      </div>
+      <div className="h-[60px] absolute bottom-0 w-full bg-zinc-50 dark:bg-zinc-950" />
     </section>
   );
 }
