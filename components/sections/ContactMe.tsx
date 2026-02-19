@@ -56,6 +56,17 @@ export function ContactMe() {
         ref={badgeContainerRef}
         className="h-full w-1/2 hidden md:flex flex-col items-center justify-center relative"
       >
+        <div className="absolute top-32 left-8 z-10">
+          <h2 className="font-serif italic text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-none mb-4">
+            Get In Touch
+          </h2>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-12 bg-orange-500/70" />
+            <span className="font-mono text-[10px] tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">
+              available_for_work
+            </span>
+          </div>
+        </div>
         <div className="flex-1 w-full">
           <PersonalBadge />
         </div>

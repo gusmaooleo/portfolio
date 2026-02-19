@@ -18,7 +18,11 @@ const staggerContainer = {
 export function Footer() {
   return (
     <footer className="relative w-full bg-zinc-50 dark:bg-zinc-950 overflow-hidden">
-      {/* ── Grainy texture (matches Hero) ── */}
+      <div className="absolute top-0 left-0 pointer-events-none select-none z-0">
+        <h1 className="text-6xl md:text-8xl font-black font-sans text-zinc-900 dark:text-zinc-100 opacity-100 mix-blend-multiply dark:mix-blend-overlay leading-[0.85]">
+          Thank <br /> You.
+        </h1>
+      </div>
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-[0.035] dark:opacity-[0.07]"
         style={{
@@ -29,13 +33,10 @@ export function Footer() {
         }}
       />
 
-      {/* ── Orange ambient glow ── */}
       <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-orange-500/[0.03] dark:bg-orange-500/[0.05] blur-[100px] z-0" />
 
-      {/* ── Top border gradient ── */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent z-10" />
 
-      {/* ── Main content ── */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -43,7 +44,6 @@ export function Footer() {
         viewport={{ once: true, margin: "-60px" }}
         className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-6"
       >
-        {/* Section label */}
         <motion.span
           variants={{
             hidden: { opacity: 0, x: -12 },
@@ -55,10 +55,8 @@ export function Footer() {
         </motion.span>
 
         <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
-          {/* Left — Webcam Card */}
           <ContextCard />
 
-          {/* Right — Navigation Matrix */}
           <motion.div
             variants={{
               hidden: {},
@@ -82,7 +80,6 @@ export function Footer() {
         </div>
       </motion.div>
 
-      {/* ── Telemetry Bar ── */}
       <motion.div
         initial="hidden"
         whileInView="visible"
