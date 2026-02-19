@@ -4,7 +4,7 @@ import { ChevronDown, Check } from "lucide-react";
 
 const languages = [
   { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "pt-BR", label: "Português (BR)", flag: "🇧🇷" },
+  { code: "pt-BR", label: "Português", flag: "🇧🇷" },
   { code: "zh-CN", label: "简体中文", flag: "🇨🇳" },
   { code: "es", label: "Español", flag: "🇪🇸" },
   { code: "ja", label: "日本語", flag: "🇯🇵" },

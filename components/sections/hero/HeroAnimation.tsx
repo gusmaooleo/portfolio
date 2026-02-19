@@ -23,7 +23,6 @@ export default function HeroAnimation() {
       <Spline
         scene={themes[(theme as "dark" | "light") || "dark"]}
         className="w-full h-full bg-transparent"
-        data-theme={theme}
       />
     </main>
   );

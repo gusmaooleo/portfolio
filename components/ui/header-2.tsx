@@ -87,7 +87,9 @@ export function Header() {
       >
         {/* Logo */}
         <div className="flex items-center gap-1">
-          <span className="font-bold text-lg text-muted-foreground">le</span>
+          <span className="font-bold text-lg text-muted-foreground">
+            &lt;dle&gt;
+          </span>
         </div>
 
         {/* Desktop Navigation */}
