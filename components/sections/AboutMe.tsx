@@ -2,14 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Code2,
-  Database,
-  Layout,
-  Smartphone,
-} from "lucide-react";
+import { Code2, Database, Layout, Smartphone } from "lucide-react";
 
 export function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,14 +17,13 @@ export function AboutMe() {
     restDelta: 0.001,
   });
 
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-200%"]);
-
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-66.66%"]);
   const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
     return smoothProgress.on("change", (v) => {
-      if (v < 0.3) setCurrentSlide(1);
-      else if (v < 0.7) setCurrentSlide(2);
+      if (v < 0.35) setCurrentSlide(1);
+      else if (v < 0.65) setCurrentSlide(2);
       else setCurrentSlide(3);
     });
   }, [smoothProgress]);
@@ -95,10 +87,11 @@ export function AboutMe() {
                 </h3>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400 font-sans leading-relaxed max-w-prose">
                   Starting as a Fullstack developer gave me the technical depth
-                  to understand *how* things works. Transitioning to Product
-                  Engineering allowed me to focus on *why* we build them. I
-                  don't just write code; I architect solutions that scale
-                  businesses.
+                  to understand <span className="font-semibold">how</span>{" "}
+                  things works. Transitioning to Product Engineering allowed me
+                  to focus on <span className="font-semibold">why</span> we
+                  build them. I don't just write code; I architect solutions
+                  that scale businesses.
                 </p>
               </div>
             </div>
