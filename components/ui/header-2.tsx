@@ -28,7 +28,7 @@ export function Header() {
   const links = [
     {
       label: "About me",
-      href: "#about",
+      href: "#about-me",
     },
     {
       label: "Projects",
@@ -88,7 +88,7 @@ export function Header() {
         {/* Logo */}
         <div className="flex items-center gap-1">
           <span className="font-bold text-lg text-muted-foreground">
-            &lt;dle&gt;
+            &lt;dleo/&gt;
           </span>
         </div>
 

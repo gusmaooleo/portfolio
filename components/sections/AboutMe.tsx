@@ -29,7 +29,8 @@ export function AboutMe() {
   }, [smoothProgress]);
 
   return (
-    <div
+    <section
+      id="about-me"
       ref={containerRef}
       className="relative h-[300vh] bg-zinc-50 dark:bg-zinc-950 -mt-16"
     >
@@ -220,6 +221,6 @@ export function AboutMe() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

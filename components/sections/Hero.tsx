@@ -70,7 +70,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute inset-0 md:relative w-full h-full flex items-center justify-center md:p-0 z-0 text-zinc-400 dark:text-zinc-600">
+        <div className="absolute inset-0 md:relative w-full h-full flex items-end justify-end md:items-center md:justify-center md:pb-0 md:pr-0 z-0 text-zinc-400 dark:text-zinc-600 pointer-events-none md:pointer-events-auto">
           <div className="xl:absolute xl:top-20 xl:right-50 text-xs font-mono text-zinc-500 dark:text-zinc-500">
             personal portfolio&quot;
           </div>
