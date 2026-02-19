@@ -40,6 +40,18 @@ export function StackCard({
         proximity={64}
         inactiveZone={0.01}
         borderWidth={3}
+        gradient={`radial-gradient(circle, var(--primary) 10%, transparent 20%),
+          radial-gradient(circle at 40% 40%, var(--secondary) 5%, transparent 15%),
+          radial-gradient(circle at 60% 60%, var(--ring) 10%, transparent 20%), 
+          radial-gradient(circle at 40% 60%, var(--accent) 10%, transparent 20%),
+          repeating-conic-gradient(
+            from 236.84deg at 50% 50%,
+            var(--primary) 0%,
+            var(--secondary) calc(25% / var(--repeating-conic-gradient-times)),
+            var(--ring) calc(50% / var(--repeating-conic-gradient-times)), 
+            var(--accent) calc(75% / var(--repeating-conic-gradient-times)),
+            var(--primary) calc(100% / var(--repeating-conic-gradient-times))
+          )`}
       />
       {/* Category Title */}
       <div className="space-y-2">

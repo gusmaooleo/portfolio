@@ -232,15 +232,12 @@ class App {
   constructor(container: HTMLElement) {
     this.container = container;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    this.renderer.setSize(container.clientWidth, container.clientHeight);
+    const width = container.clientWidth || 1;
+    const height = container.clientHeight || 1;
+    this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
-    this.camera = new THREE.PerspectiveCamera(
-      45,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      10000,
-    );
+    this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 10000);
     this.camera.position.z = 50;
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x0a0e27);
@@ -267,8 +264,8 @@ class App {
     const c = this.container;
     const onMove = (x: number, y: number) => {
       this.touchTexture.addTouch({
-        x: x / c.clientWidth,
-        y: 1 - y / c.clientHeight,
+        x: x / (c.clientWidth || 1),
+        y: 1 - y / (c.clientHeight || 1),
       });
     };
     c.addEventListener("mousemove", (e) => onMove(e.offsetX, e.offsetY));
@@ -277,10 +274,12 @@ class App {
       onMove(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
     });
     window.addEventListener("resize", () => {
-      this.camera.aspect = c.clientWidth / c.clientHeight;
+      const width = c.clientWidth || 1;
+      const height = c.clientHeight || 1;
+      this.camera.aspect = width / height;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(c.clientWidth, c.clientHeight);
-      this.gradientBackground.onResize(c.clientWidth, c.clientHeight);
+      this.renderer.setSize(width, height);
+      this.gradientBackground.onResize(width, height);
     });
     this.tick();
   }
@@ -304,9 +303,10 @@ class App {
   }
 }
 
-export default function LiquidGradient({
+export function LiquidGradient({
   showPauseButton = true,
-}: LiquidGradientProps) {
+  className,
+}: LiquidGradientProps & { className?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -362,8 +362,8 @@ export default function LiquidGradient({
   }, [isPlaying]);
 
   return (
-    <div className="liquid-container">
-      <div ref={containerRef} className="liquid-canvas-wrapper" />
+    <div className={`liquid-container ${className || ""}`}>
+      <div ref={containerRef} className="liquid-canvas-wrapper w-full h-full" />
 
       {showPauseButton && (
         <button

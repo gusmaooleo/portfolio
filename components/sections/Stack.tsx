@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { StackCard } from "../stack/StackCard";
 import { ProductMindset } from "../stack/ProductMindset";
+import { LiquidGradient } from "../ui/flow-gradient-hero-section";
 
 const stackCategories = [
   {
@@ -115,8 +116,12 @@ export default function StackSection() {
   return (
     <section
       id="stack"
-      className="relative py-24 md:py-32 px-6 md:px-12 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500"
+      className="relative py-24 md:py-32 px-6 md:px-12 bg-transparent transition-colors duration-500"
     >
+      <LiquidGradient
+        showPauseButton={false}
+        className="absolute inset-0 opacity-25 -z-10"
+      />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
