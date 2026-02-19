@@ -4,7 +4,9 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function HeroAnimation() {
-  const { theme } = useTheme();
+  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+  // @ts-ignore
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -18,10 +20,12 @@ export default function HeroAnimation() {
 
   if (!mounted) return null;
 
+  const currentTheme = (resolvedTheme as "light" | "dark") || "dark";
+
   return (
     <main className="w-full h-full">
       <Spline
-        scene={themes[(theme as "dark" | "light") || "dark"]}
+        scene={themes[currentTheme]}
         className="w-full h-full bg-transparent"
       />
     </main>
