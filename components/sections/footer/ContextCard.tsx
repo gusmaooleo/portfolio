@@ -10,11 +10,11 @@ export function ContextCard() {
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
 
-  const rotateX = useSpring(useTransform(y, [0, 1], [5, -5]), {
+  const rotateX = useSpring(useTransform(y, [0, 1], [4, -4]), {
     stiffness: 150,
     damping: 20,
   });
-  const rotateY = useSpring(useTransform(x, [0, 1], [-5, 5]), {
+  const rotateY = useSpring(useTransform(x, [0, 1], [-4, 4]), {
     stiffness: 150,
     damping: 20,
   });
@@ -37,14 +37,23 @@ export function ContextCard() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformPerspective: 800 }}
-      className="relative w-full max-w-sm rounded-2xl overflow-hidden
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      }}
+      className="relative w-full max-w-sm rounded-xl overflow-hidden
         border border-zinc-200/60 dark:border-zinc-800/50
-        bg-zinc-100/50 dark:bg-zinc-900/50
-        backdrop-blur-md
+        bg-zinc-100/60 dark:bg-zinc-900/60
+        backdrop-blur-xl
         shadow-[0_8px_32px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]
-        select-none"
+        select-none group"
     >
-      <div className="relative w-full aspect-[16/9]">
+      {/* ── Feed viewport ── */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <Image
           src="/so_nos_computers.webp"
           alt="Leonardo Gusmão"
@@ -53,10 +62,42 @@ export function ContextCard() {
           sizes="(max-width: 768px) 100vw, 380px"
           priority
         />
+
+        {/* Scanlines overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 z-10 opacity-[0.06] dark:opacity-[0.1]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)",
+          }}
+        />
+
+        {/* Vignette */}
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+
+        {/* REC indicator */}
+        <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+          </span>
+          <span className="font-mono text-[9px] tracking-widest text-red-400 uppercase font-medium">
+            REC
+          </span>
+        </div>
+
+        {/* Timestamp HUD */}
+        <div className="absolute bottom-2 right-3 z-20">
+          <span className="font-mono text-[9px] tracking-wider text-white/50">
+            CAM_01 — LIVE
+          </span>
+        </div>
       </div>
 
-      <div className="p-5">
-        <p className="font-sans text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+      {/* ── Log-style caption ── */}
+      <div className="px-4 py-3 border-t border-zinc-200/40 dark:border-zinc-800/40">
+        <p className="font-mono text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-500 tracking-wide">
+          <span className="text-zinc-400 dark:text-zinc-600">{">"}</span>{" "}
           Probably I am looking like this right now, but feel free to reach out
           and I&apos;ll get back to you as soon as possible.
         </p>
