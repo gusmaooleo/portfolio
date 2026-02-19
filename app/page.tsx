@@ -1,9 +1,11 @@
-import HeroSection from "@/components/sections/Hero";
+import { Hero } from "@/components/sections/Hero";
+import { Header } from "@/components/ui/header-2";
 
-export default function PortfolioStructure() {
+export default function Home() {
   return (
-    <>
-      <HeroSection />
-    </>
+    <main>
+      <Header />
+      <Hero />
+    </main>
   );
 }
