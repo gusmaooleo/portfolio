@@ -91,8 +91,8 @@ export function AboutMe() {
                   to understand <span className="font-semibold">how</span>{" "}
                   things works. Transitioning to Product Engineering allowed me
                   to focus on <span className="font-semibold">why</span> we
-                  build them. I don't just write code; I architect solutions
-                  that scale businesses.
+                  build them. I don&apos;t just write code; I architect
+                  solutions that scale businesses.
                 </p>
               </div>
             </div>

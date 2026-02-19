@@ -86,10 +86,15 @@ export function Header() {
         )}
       >
         {/* Logo */}
-        <div className="flex items-center gap-1">
-          <span className="font-bold text-lg text-muted-foreground">
-            &lt;dleo/&gt;
+        <div className="flex items-center gap-4">
+          <span className="font-serif font-bold text-lg text-orange-500 mb-1">
+            leo
           </span>
+          <div className="border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1">
+            <p className="font-mono text-xs text-gray-500 dark:text-gray-400">
+              beta
+            </p>
+          </div>
         </div>
 
         {/* Desktop Navigation */}

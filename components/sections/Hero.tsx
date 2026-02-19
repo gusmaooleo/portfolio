@@ -4,6 +4,7 @@ import React from "react";
 import { ArrowDown, Globe } from "lucide-react";
 import HeroAnimation from "@/components/sections/hero/HeroAnimation";
 import DotPulse from "./hero/DotPulse";
+import TextScramble from "../ui/text-scramble";
 
 export function Hero() {
   return (
@@ -39,9 +40,10 @@ export function Hero() {
               developing experiences.
             </h2>
             <div>
-              <h1 className="text-7xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 -ml-1">
+              <TextScramble className="text-7xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 -ml-1">
                 Leonardo
-              </h1>
+              </TextScramble>
+
               <p className="text-xl md:text-2xl font-medium text-zinc-700 dark:text-zinc-300 mt-2 tracking-tight">
                 Software & Product Engineer
               </p>
