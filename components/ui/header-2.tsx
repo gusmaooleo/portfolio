@@ -8,11 +8,22 @@ import { useScroll } from "./use-scroll";
 import NavLink from "./nav-link";
 import { useActiveSection } from "./use-active-section";
 import { LanguageSelectorDropdown } from "./language-selector-dropdown";
-import { Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
 
 export function Header() {
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(10);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const links = [
     {
@@ -58,10 +69,8 @@ export function Header() {
           "bg-transparent": !scrolled && !open,
 
           // Estado scrolled - luz de cima, sombra elegante
-          "bg-background/80 supports-[backdrop-filter]:bg-background/10 backdrop-blur-xl \
-           border-[rgba(0,0,0,0.06)] \
-           shadow-[0_-1px_0_rgba(255,255,255,0.8),0_1px_3px_rgba(0,0,0,0.04),0_8px_32px_rgba(0,0,0,0.06)] \
-           md:top-4 md:max-w-4xl": scrolled && !open,
+          "bg-background/80 supports-[backdrop-filter]:bg-background/10 backdrop-blur-xl border-[rgba(0,0,0,0.06)] shadow-[0_-1px_0_rgba(255,255,255,0.8),0_1px_3px_rgba(0,0,0,0.04),0_8px_32px_rgba(0,0,0,0.06)] dark:border-white/10 dark:shadow-none md:top-4 md:max-w-4xl":
+            scrolled && !open,
 
           // Mobile menu aberto
           "bg-background": open,
@@ -104,7 +113,17 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <div className="flex items-center gap-4">
             <LanguageSelectorDropdown />
-            <Sun className="w-5 h-5 text-neutral-500 hover:text-black cursor-pointer transition-colors" />
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {mounted && theme === "dark" ? (
+                <Moon className="w-5 h-5 text-neutral-500 hover:text-white transition-colors" />
+              ) : (
+                <Sun className="w-5 h-5 text-neutral-500 hover:text-black transition-colors" />
+              )}
+            </button>
           </div>
         </div>
 
@@ -157,7 +176,17 @@ export function Header() {
           <div className="flex flex-col gap-3 pb-8">
             <div className="flex items-center gap-4">
               <LanguageSelectorDropdown />
-              <Sun className="w-5 h-5 text-neutral-500 hover:text-black cursor-pointer transition-colors" />
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {mounted && theme === "dark" ? (
+                  <Moon className="w-5 h-5 text-neutral-500 hover:text-white transition-colors" />
+                ) : (
+                  <Sun className="w-5 h-5 text-neutral-500 hover:text-black transition-colors" />
+                )}
+              </button>
             </div>
           </div>
         </div>

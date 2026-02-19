@@ -50,7 +50,7 @@ export const LanguageSelectorDropdown = () => {
       {open && (
         <div
           className={cn(
-            "absolute left-0 mt-2 w-48 rounded-xl overflow-hidden",
+            "absolute right-0 mt-2 w-48 rounded-xl overflow-hidden",
             "bg-white/90 dark:bg-neutral-900/95 backdrop-blur-xl",
             "shadow-lg border border-gray-200 dark:border-neutral-700",
             "animate-fade-in",
