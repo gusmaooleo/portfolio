@@ -112,7 +112,7 @@ const stackCategories = [
   },
 ];
 
-export default function StackSection() {
+export function StackSection() {
   return (
     <section
       id="stack"
