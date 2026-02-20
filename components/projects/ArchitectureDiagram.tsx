@@ -214,6 +214,24 @@ const projectFlows = {
   },
 };
 
+function getProjectFlow(activeProject: string) {
+  return (
+    projectFlows[activeProject as keyof typeof projectFlows] ||
+    projectFlows.saffira
+  );
+}
+
+function getThemedEdges(edges: Edge[], theme?: string) {
+  const stroke = theme === "dark" ? "#52525b" : "#d4d4d8";
+  return edges.map((edge) => ({
+    ...edge,
+    style: {
+      stroke,
+      strokeWidth: 2,
+    },
+  }));
+}
+
 function Flow({ activeProject }: ArchitectureDiagramProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -227,26 +245,24 @@ function Flow({ activeProject }: ArchitectureDiagramProps) {
   }, []);
 
   useEffect(() => {
-    // Determine which project flows to load
-    const flow =
-      projectFlows[activeProject as keyof typeof projectFlows] ||
-      projectFlows.saffira;
-
+    const flow = getProjectFlow(activeProject);
     setNodes(flow.nodes);
-    setEdges(
-      flow.edges.map((edge) => ({
-        ...edge,
-        style: {
-          stroke: theme === "dark" ? "#52525b" : "#d4d4d8", // zinc-700 : zinc-300 (do tailwind)
-          strokeWidth: 2,
-        },
-      })),
-    );
+  }, [activeProject, setNodes]);
 
-    setTimeout(() => {
+  useEffect(() => {
+    const flow = getProjectFlow(activeProject);
+    setEdges(getThemedEdges(flow.edges, theme));
+  }, [activeProject, theme, setEdges]);
+
+  useEffect(() => {
+    const fitViewTimeout = window.setTimeout(() => {
       fitView({ duration: 800, padding: 0.2 });
     }, 100);
-  }, [activeProject, theme, setNodes, setEdges, fitView]);
+
+    return () => {
+      window.clearTimeout(fitViewTimeout);
+    };
+  }, [activeProject, fitView]);
 
   if (!mounted) return null;
 

@@ -17,6 +17,8 @@ export const LanguageSelectorDropdown = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!open) return;
+
     function handleClickOutside(e: MouseEvent) {
       if (
         dropdownRef.current &&
@@ -27,7 +29,7 @@ export const LanguageSelectorDropdown = () => {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [open]);
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>

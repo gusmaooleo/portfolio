@@ -229,6 +229,9 @@ class App {
   gradientBackground: GradientBackground;
   animationId: number | null = null;
   container: HTMLElement;
+  onMouseMove: ((event: MouseEvent) => void) | null = null;
+  onTouchMove: ((event: TouchEvent) => void) | null = null;
+  onResize: (() => void) | null = null;
   constructor(container: HTMLElement) {
     this.container = container;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
@@ -268,19 +271,29 @@ class App {
         y: 1 - y / (c.clientHeight || 1),
       });
     };
-    c.addEventListener("mousemove", (e) => onMove(e.offsetX, e.offsetY));
-    c.addEventListener("touchmove", (e) => {
+
+    this.onMouseMove = (event) => onMove(event.offsetX, event.offsetY);
+    this.onTouchMove = (event) => {
+      if (event.touches.length === 0) return;
       const rect = c.getBoundingClientRect();
-      onMove(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
-    });
-    window.addEventListener("resize", () => {
+      onMove(
+        event.touches[0].clientX - rect.left,
+        event.touches[0].clientY - rect.top,
+      );
+    };
+    this.onResize = () => {
       const width = c.clientWidth || 1;
       const height = c.clientHeight || 1;
       this.camera.aspect = width / height;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(width, height);
       this.gradientBackground.onResize(width, height);
-    });
+    };
+
+    c.addEventListener("mousemove", this.onMouseMove, { passive: true });
+    c.addEventListener("touchmove", this.onTouchMove, { passive: true });
+    window.addEventListener("resize", this.onResize, { passive: true });
+
     this.tick();
   }
   tick() {
@@ -291,7 +304,22 @@ class App {
     this.animationId = requestAnimationFrame(() => this.tick());
   }
   cleanup() {
-    if (this.animationId) cancelAnimationFrame(this.animationId);
+    if (this.animationId !== null) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
+    if (this.onMouseMove) {
+      this.container.removeEventListener("mousemove", this.onMouseMove);
+      this.onMouseMove = null;
+    }
+    if (this.onTouchMove) {
+      this.container.removeEventListener("touchmove", this.onTouchMove);
+      this.onTouchMove = null;
+    }
+    if (this.onResize) {
+      window.removeEventListener("resize", this.onResize);
+      this.onResize = null;
+    }
     this.renderer.dispose();
     if (
       this.container &&
@@ -350,7 +378,10 @@ export function LiquidGradient({
     appRef.current = new App(container);
 
     return () => {
-      if (appRef.current) appRef.current.cleanup();
+      if (appRef.current) {
+        appRef.current.cleanup();
+        appRef.current = null;
+      }
     };
   }, []);
 

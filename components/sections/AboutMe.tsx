@@ -22,9 +22,10 @@ export function AboutMe() {
 
   useEffect(() => {
     return smoothProgress.on("change", (v) => {
-      if (v < 0.35) setCurrentSlide(1);
-      else if (v < 0.65) setCurrentSlide(2);
-      else setCurrentSlide(3);
+      const nextSlide = v < 0.35 ? 1 : v < 0.65 ? 2 : 3;
+      setCurrentSlide((prevSlide) =>
+        prevSlide === nextSlide ? prevSlide : nextSlide,
+      );
     });
   }, [smoothProgress]);
 

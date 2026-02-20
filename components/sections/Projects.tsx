@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArchitectureDiagram } from "../projects/ArchitectureDiagram";
 import { ProjectCard, ProjectCardProps } from "../projects/ProjectCard";
@@ -55,13 +55,11 @@ const projects: ProjectCardProps[] = [
 ];
 
 export function ProjectsSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeProject, setActiveProject] = useState("saffira");
 
   return (
     <section
       id="projects"
-      ref={containerRef}
       className="relative bg-zinc-50 dark:bg-zinc-950"
     >
       <div className="flex flex-col lg:flex-row">

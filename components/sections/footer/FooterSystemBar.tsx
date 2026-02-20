@@ -1,29 +1,80 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
+function formatClockTime() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, "0");
+  const m = String(now.getMinutes()).padStart(2, "0");
+  const s = String(now.getSeconds()).padStart(2, "0");
+  const ms = String(now.getMilliseconds()).padStart(3, "0");
+  return `${h}:${m}:${s}.${ms}`;
+}
+
 function LiveClock() {
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState("00:00:00.000");
+  const clockRef = useRef<HTMLSpanElement>(null);
+  const intervalRef = useRef<number | null>(null);
+  const isInViewRef = useRef(false);
+  const isPageVisibleRef = useRef(true);
 
-  useEffect(() => {
-    function tick() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2, "0");
-      const m = String(now.getMinutes()).padStart(2, "0");
-      const s = String(now.getSeconds()).padStart(2, "0");
-      const ms = String(now.getMilliseconds()).padStart(3, "0");
-      setTime(`${h}:${m}:${s}.${ms}`);
-    }
-
-    tick();
-    const id = setInterval(tick, 47); // ~21fps for visible ms ticking
-    return () => clearInterval(id);
+  const tick = useCallback(() => {
+    setTime(formatClockTime());
   }, []);
 
+  const syncClockLoop = useCallback(() => {
+    const shouldRun = isInViewRef.current && isPageVisibleRef.current;
+
+    if (shouldRun && intervalRef.current === null) {
+      tick();
+      intervalRef.current = window.setInterval(tick, 47);
+      return;
+    }
+
+    if (!shouldRun && intervalRef.current !== null) {
+      window.clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, [tick]);
+
+  useEffect(() => {
+    const clockNode = clockRef.current;
+    if (!clockNode) return;
+
+    isPageVisibleRef.current = !document.hidden;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+        syncClockLoop();
+      },
+      { rootMargin: "120px" },
+    );
+    observer.observe(clockNode);
+
+    const handleVisibilityChange = () => {
+      isPageVisibleRef.current = !document.hidden;
+      syncClockLoop();
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (intervalRef.current !== null) {
+        window.clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [syncClockLoop]);
+
   return (
-    <span className="font-mono text-[10px] tabular-nums text-zinc-400 dark:text-zinc-600 tracking-wider">
-      {time || "00:00:00.000"}
+    <span
+      ref={clockRef}
+      className="font-mono text-[10px] tabular-nums text-zinc-400 dark:text-zinc-600 tracking-wider"
+    >
+      {time}
     </span>
   );
 }

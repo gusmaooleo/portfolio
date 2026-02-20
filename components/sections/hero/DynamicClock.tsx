@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import DotPulse from "./DotPulse";
@@ -8,6 +8,7 @@ import DotPulse from "./DotPulse";
 export default function DynamicClock() {
   const [time, setTime] = useState("");
   const [isGlitching, setIsGlitching] = useState(false);
+  const glitchTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const updateTime = () => {
@@ -22,7 +23,12 @@ export default function DynamicClock() {
       setTime((prev) => {
         if (prev !== timeString && prev !== "") {
           setIsGlitching(true);
-          setTimeout(() => setIsGlitching(false), 300);
+          if (glitchTimeoutRef.current !== null) {
+            window.clearTimeout(glitchTimeoutRef.current);
+          }
+          glitchTimeoutRef.current = window.setTimeout(() => {
+            setIsGlitching(false);
+          }, 300);
         }
         return timeString;
       });
@@ -30,7 +36,12 @@ export default function DynamicClock() {
 
     updateTime();
     const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (glitchTimeoutRef.current !== null) {
+        window.clearTimeout(glitchTimeoutRef.current);
+      }
+    };
   }, []);
 
   const [mounted, setMounted] = useState(false);

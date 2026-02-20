@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
 
@@ -30,6 +30,20 @@ const contactLinks = [
 export function ContactCard() {
   const [message, setMessage] = useState("");
   const [sendState, setSendState] = useState<SendState>("idle");
+  const sendingTimeoutRef = useRef<number | null>(null);
+  const resetTimeoutRef = useRef<number | null>(null);
+
+  useEffect(
+    () => () => {
+      if (sendingTimeoutRef.current !== null) {
+        window.clearTimeout(sendingTimeoutRef.current);
+      }
+      if (resetTimeoutRef.current !== null) {
+        window.clearTimeout(resetTimeoutRef.current);
+      }
+    },
+    [],
+  );
 
   const handleSend = useCallback(() => {
     if (!message.trim() || sendState !== "idle") return;
@@ -37,11 +51,11 @@ export function ContactCard() {
     setSendState("sending");
 
     // Simulate sending — mailto fallback
-    setTimeout(() => {
+    sendingTimeoutRef.current = window.setTimeout(() => {
       setSendState("sent");
       window.location.href = `mailto:leonardo@example.com?subject=Portfolio Contact&body=${encodeURIComponent(message)}`;
 
-      setTimeout(() => {
+      resetTimeoutRef.current = window.setTimeout(() => {
         setSendState("idle");
         setMessage("");
       }, 2500);
@@ -62,7 +76,7 @@ export function ContactCard() {
     >
       <div className="mb-6">
         <span className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-2">
-          // get_in_touch
+          {"// get_in_touch"}
         </span>
         <h3 className="font-serif italic text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight">
           Establishing connection...

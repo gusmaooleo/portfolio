@@ -12,6 +12,27 @@ import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { VersionTag } from "./version-tag";
 
+const NAV_LINKS = [
+  {
+    label: "About me",
+    href: "#about-me",
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+  },
+  {
+    label: "Stack",
+    href: "#stack",
+  },
+  {
+    label: "Contact-me",
+    href: "#contact-me",
+  },
+] as const;
+
+const SECTION_IDS = NAV_LINKS.map((link) => link.href.replace("#", ""));
+
 export function Header() {
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(10);
@@ -22,32 +43,11 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = React.useCallback(() => {
     setTheme(theme === "dark" ? "light" : "dark");
-  };
+  }, [setTheme, theme]);
 
-  const links = [
-    {
-      label: "About me",
-      href: "#about-me",
-    },
-    {
-      label: "Projects",
-      href: "#projects",
-    },
-    {
-      label: "Stack",
-      href: "#stack",
-    },
-    {
-      label: "Contact-me",
-      href: "#contact-me",
-    },
-  ];
-
-  const activeSection = useActiveSection(
-    links.map((link) => link.href.replace("#", "")),
-  );
+  const activeSection = useActiveSection(SECTION_IDS);
 
   React.useEffect(() => {
     if (open) {
@@ -96,7 +96,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-1 md:flex">
-          {links.map((link, i) => (
+          {NAV_LINKS.map((link, i) => (
             <NavLink
               key={i}
               href={link.href}
@@ -160,7 +160,7 @@ export function Header() {
         >
           {/* Navigation Links */}
           <div className="flex flex-col gap-1 pt-4">
-            {links.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 className={buttonVariants({

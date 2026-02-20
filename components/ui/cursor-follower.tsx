@@ -5,18 +5,31 @@ import { useEffect, useRef } from "react";
 export function CursorFollower() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<number | null>(null);
+  const positionRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      if (cursorRef.current && ringRef.current) {
-        cursorRef.current.style.transform = `translate3d(${e.clientX - 4}px, ${e.clientY - 4}px, 0)`;
+      positionRef.current = { x: e.clientX, y: e.clientY };
+      if (frameRef.current !== null) return;
 
-        ringRef.current.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`;
-      }
+      frameRef.current = window.requestAnimationFrame(() => {
+        frameRef.current = null;
+
+        if (!cursorRef.current || !ringRef.current) return;
+
+        cursorRef.current.style.transform = `translate3d(${positionRef.current.x - 4}px, ${positionRef.current.y - 4}px, 0)`;
+        ringRef.current.style.transform = `translate3d(${positionRef.current.x - 16}px, ${positionRef.current.y - 16}px, 0)`;
+      });
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    return () => window.removeEventListener("mousemove", moveCursor);
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
   }, []);
 
   return (

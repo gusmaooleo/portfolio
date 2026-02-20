@@ -14,28 +14,51 @@ export function useDimensions(
   });
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    const element = ref.current;
+    if (!element) return;
+
+    let frameId: number | null = null;
 
     const updateDimensions = () => {
-      if (ref.current) {
-        const { width, height } = ref.current.getBoundingClientRect();
-        setDimensions({ width, height });
+      const { width, height } = element.getBoundingClientRect();
+      setDimensions((prev) =>
+        prev.width === width && prev.height === height
+          ? prev
+          : { width, height },
+      );
+    };
+
+    const scheduleUpdate = () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
       }
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        updateDimensions();
+      });
     };
 
-    const debouncedUpdateDimensions = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateDimensions, 250); // Wait 250ms after resize ends
-    };
-
-    // Initial measurement
     updateDimensions();
 
-    window.addEventListener("resize", debouncedUpdateDimensions);
+    if (typeof ResizeObserver !== "undefined") {
+      const resizeObserver = new ResizeObserver(scheduleUpdate);
+      resizeObserver.observe(element);
+
+      return () => {
+        resizeObserver.disconnect();
+        if (frameId !== null) {
+          window.cancelAnimationFrame(frameId);
+        }
+      };
+    }
+
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", debouncedUpdateDimensions);
-      clearTimeout(timeoutId);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
     };
   }, [ref]);
 
