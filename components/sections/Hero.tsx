@@ -12,21 +12,21 @@ export function Hero() {
   return (
     <section className="relative w-full min-h-[110vh] overflow-hidden bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans -mt-16 md:-mt-20 transition-colors duration-500">
       <CursorFollower />
-      <div className="relative w-full min-h-screen flex flex-col md:grid md:grid-cols-2 pt-24 px-6 md:px-12 z-10 transition-colors duration-500">
-        <div className="flex flex-col justify-center h-full space-y-12 md:space-y-24 z-20 relative p-4 xl:pl-50">
+      <div className="relative w-full min-h-screen flex flex-col md:grid md:grid-cols-12 gap-[var(--grid-gutter)] pt-[var(--section-spacing-mobile)] md:pt-[var(--section-spacing)] px-6 md:px-0 max-w-[var(--container-max-width)] mx-auto z-10 transition-colors duration-500">
+        <div className="flex flex-col justify-center h-full space-y-12 md:space-y-16 z-20 relative p-4 md:col-span-6 lg:col-start-2 lg:col-span-5">
           <DynamicClock />
 
-          <div className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-zinc-200 tracking-tight">
+          <div className="space-y-6">
+            <h2 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-zinc-200 tracking-tight leading-tight">
               Creating & <br />
               developing experiences.
             </h2>
             <div>
-              <TextScramble className="text-7xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 -ml-1">
+              <TextScramble className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 -ml-1 leading-[0.9]">
                 Leonardo
               </TextScramble>
 
-              <p className="text-xl md:text-2xl font-medium text-zinc-700 dark:text-zinc-300 mt-2 tracking-tight">
+              <p className="text-lg md:text-xl font-medium text-zinc-700 dark:text-zinc-300 mt-4 tracking-tight max-w-md leading-relaxed">
                 Software & Product Engineer
               </p>
             </div>
@@ -54,7 +54,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute inset-0 md:relative w-full h-full flex items-end justify-end md:items-center md:justify-center md:pb-0 md:pr-0 z-0 text-zinc-400 dark:text-zinc-600 pointer-events-none md:pointer-events-auto">
+        <div className="absolute inset-0 md:relative w-full h-full flex items-end justify-end md:items-center md:justify-center md:pb-0 md:pr-0 z-0 text-zinc-400 dark:text-zinc-600 pointer-events-none md:pointer-events-auto md:col-span-6 lg:col-span-6">
           <div className="absolute bottom-8 right-8 xl:absolute xl:bottom-30 xl:right-50">
             <SystemStatus />
           </div>

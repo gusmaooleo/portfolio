@@ -87,6 +87,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Layout Variables */
+  --section-spacing: 8rem; /* py-32 for desktop */
+  --section-spacing-mobile: 4rem; /* py-16 for mobile */
+  --grid-gutter: 2rem; /* gap-8 */
+  --grid-gap-mobile: 1rem; /* gap-4 */
+  --container-max-width: 80rem; /* max-w-7xl (1280px) */
 }
 
 .dark {

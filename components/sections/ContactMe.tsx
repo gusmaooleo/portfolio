@@ -56,15 +56,21 @@ export function ContactMe() {
         ref={badgeContainerRef}
         className="h-full w-1/2 hidden md:flex flex-col items-center justify-center relative"
       >
-        <div className="absolute top-32 left-8 z-10">
-          <h2 className="font-serif italic text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-none mb-4">
-            Get In Touch
-          </h2>
-          <div className="flex items-center gap-3">
-            <span className="h-px w-12 bg-orange-500/70" />
-            <span className="font-mono text-[10px] tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">
-              available_for_work
-            </span>
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <div className="max-w-[var(--container-max-width)] mx-auto h-full px-6 md:px-0 grid grid-cols-1 md:grid-cols-12 gap-[var(--grid-gutter)]">
+            <div className="relative h-full md:col-span-6 lg:col-start-2 lg:col-span-5">
+              <div className="absolute top-32 left-0 pointer-events-auto">
+                <h2 className="font-serif italic text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-none mb-6">
+                  Get In Touch
+                </h2>
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-12 bg-orange-500/70" />
+                  <span className="font-mono text-xs tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">
+                    available_for_work
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex-1 w-full">
@@ -82,7 +88,7 @@ export function ContactMe() {
             <PixelTrail
               pixelSize={80}
               fadeDuration={0}
-              delay={600}
+              delay={200}
               pixelClassName="rounded-full bg-[#ffa04f]"
             />
           </div>

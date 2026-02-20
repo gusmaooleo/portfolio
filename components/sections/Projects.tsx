@@ -82,12 +82,12 @@ export function ProjectsSection() {
         </div>
 
         <div className="w-full lg:w-1/2">
-          <div className="max-w-xl mx-auto px-6 py-24 pb-48">
-            <div className="mb-24 space-y-4">
+          <div className="max-w-2xl mx-auto px-6 md:px-12 py-[var(--section-spacing-mobile)] md:py-[var(--section-spacing)] pb-48">
+            <div className="mb-24 space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-zinc-200 dark:bg-zinc-800 text-xs font-mono">
                 SELECTED WORKS 2024-2026
               </span>
-              <h2 className="text-5xl md:text-6xl font-serif">
+              <h2 className="text-4xl md:text-6xl font-serif leading-tight">
                 Engineering <br />{" "}
                 <span className="italic text-zinc-500">Solutions</span>
               </h2>

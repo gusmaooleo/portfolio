@@ -116,35 +116,33 @@ export function StackSection() {
   return (
     <section
       id="stack"
-      className="relative py-24 md:py-32 px-6 md:px-12 bg-transparent transition-colors duration-500"
+      className="relative py-[var(--section-spacing-mobile)] md:py-[var(--section-spacing)] px-6 md:px-0 bg-transparent transition-colors duration-500"
     >
       <LiquidGradient
         showPauseButton={false}
         className="absolute inset-0 opacity-25 -z-10"
       />
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
+      <div className="max-w-[var(--container-max-width)] mx-auto grid grid-cols-1 md:grid-cols-12 gap-[var(--grid-gutter)]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 md:mb-20"
+          className="mb-16 md:mb-24 md:col-span-12 lg:col-start-2 lg:col-span-8"
         >
-          <span className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-500 uppercase block mb-3">
+          <span className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-500 uppercase block mb-4">
             Technologies & Expertise
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-medium text-zinc-900 dark:text-zinc-100 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-serif font-medium text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
             Stack
           </h2>
-          <p className="mt-4 text-base text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed">
             Tools and technologies, grouped by intent — from the runtime engine
             to the growth lever.
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="md:col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--grid-gap-mobile)] md:gap-[var(--grid-gutter)]">
           {stackCategories.map((category, index) => (
             <StackCard
               key={category.title}
@@ -155,7 +153,6 @@ export function StackSection() {
             />
           ))}
 
-          {/* Product Mindset Block */}
           <ProductMindset />
         </div>
       </div>

@@ -42,20 +42,24 @@ export function Footer() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
-        className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-6"
+        className="relative z-10 max-w-[var(--container-max-width)] mx-auto px-6 md:px-0 pt-[var(--section-spacing-mobile)] md:pt-[var(--section-spacing)] pb-6"
       >
-        <motion.span
-          variants={{
-            hidden: { opacity: 0, x: -12 },
-            visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
-          }}
-          className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-8"
-        >
-          {"// control_center"}
-        </motion.span>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[var(--grid-gutter)]">
+          <div className="md:col-span-12 lg:col-start-2 lg:col-span-10 text-right md:text-left">
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, x: -12 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+              }}
+              className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-12"
+            >
+              {"// control_center"}
+            </motion.span>
+          </div>
 
-        <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
-          <ContextCard />
+          <div className="md:col-span-5 lg:col-start-2 lg:col-span-4">
+            <ContextCard />
+          </div>
 
           <motion.div
             variants={{
@@ -64,14 +68,14 @@ export function Footer() {
                 transition: { staggerChildren: 0.08, delayChildren: 0.2 },
               },
             }}
-            className="w-full flex flex-col gap-6"
+            className="w-full flex flex-col gap-8 md:col-span-7 lg:col-span-5 lg:col-start-7"
           >
             <motion.span
               variants={{
                 hidden: { opacity: 0, x: -12 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
               }}
-              className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-600 uppercase"
+              className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-600 uppercase"
             >
               {"// navigation_matrix"}
             </motion.span>

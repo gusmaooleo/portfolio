@@ -76,12 +76,12 @@ export function AboutMe() {
 
         <div className="w-full md:w-[75%] lg:w-[80%] h-full relative overflow-hidden">
           <motion.div style={{ x }} className="flex h-full w-[300%]">
-            <div className="w-1/3 h-full flex items-center justify-center p-8 md:p-16 lg:p-24 border-r border-zinc-100 dark:border-zinc-900/50">
+            <div className="w-1/3 h-full flex items-center justify-center p-8 md:p-12 lg:p-24 border-r border-zinc-100 dark:border-zinc-900/50">
               <div className="max-w-2xl space-y-8">
                 <div className="inline-block px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs font-mono mb-4">
                   FULLSTACK BACKGROUND
                 </div>
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight">
+                <h3 className="text-4xl md:text-5xl font-serif leading-tight">
                   Building bridges between{" "}
                   <span className="italic text-zinc-500">code</span> &{" "}
                   <span className="italic text-zinc-500">business value</span>.
@@ -98,11 +98,11 @@ export function AboutMe() {
             </div>
 
             <div className="w-1/3 h-full flex flex-col md:flex-row items-center border-r border-zinc-100 dark:border-zinc-900/50">
-              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center gap-8">
+              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-12 flex flex-col justify-center gap-8">
                 <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-mono w-fit">
                   PRODUCT ENGINEERING
                 </div>
-                <h3 className="text-3xl md:text-4xl font-sans font-medium">
+                <h3 className="text-4xl md:text-5xl font-sans font-medium leading-tight">
                   Optimizing for impact,
                   <br />
                   not just output.
@@ -150,12 +150,12 @@ export function AboutMe() {
             </div>
 
             <div className="w-1/3 h-full flex items-center justify-center bg-zinc-900 text-zinc-100">
-              <div className="max-w-4xl w-full p-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="max-w-4xl w-full p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-6">
                   <div className="inline-block px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-mono border border-zinc-700">
                     STACKS & SCALABILITY
                   </div>
-                  <h3 className="text-4xl font-serif italic text-white">
+                  <h3 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">
                     Tech that scales.
                   </h3>
                   <p className="text-zinc-400 leading-relaxed">
