@@ -1,32 +1,34 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CursorFollower() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 300 };
-  const x = useSpring(mouseX, springConfig);
-  const y = useSpring(mouseY, springConfig);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 16);
-      mouseY.set(e.clientY - 16);
+      if (cursorRef.current && ringRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX - 4}px, ${e.clientY - 4}px, 0)`;
+
+        ringRef.current.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`;
+      }
     };
 
     window.addEventListener("mousemove", moveCursor);
     return () => window.removeEventListener("mousemove", moveCursor);
-  }, [mouseX, mouseY]);
+  }, []);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-50 hidden md:block mix-blend-difference"
-      style={{ x, y }}
-    >
-      <div className="w-full h-full rounded-full bg-white blur-[2px] opacity-40" />
-    </motion.div>
+    <>
+      <div
+        ref={cursorRef}
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-zinc-400/80 dark:bg-zinc-500/80 pointer-events-none z-50 hidden md:block backdrop-blur-sm"
+      />
+      <div
+        ref={ringRef}
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-zinc-400/50 dark:border-zinc-500/50 pointer-events-none z-50 hidden md:block"
+      />
+    </>
   );
 }
