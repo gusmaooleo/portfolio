@@ -81,12 +81,12 @@ export function AboutMe() {
 
         <div className="w-full md:w-[75%] lg:w-[80%] h-full relative overflow-hidden">
           <motion.div style={{ x }} className="flex h-full w-[300%]">
-            <div className="w-1/3 h-full flex items-center justify-center p-8 md:p-12 lg:p-24 border-r border-zinc-100 dark:border-zinc-900/50">
+            <div className="w-1/3 h-full flex items-center justify-center p-4 md:p-12 lg:p-24 border-r border-zinc-100 dark:border-zinc-900/50">
               <div className="max-w-2xl space-y-8">
                 <div className="inline-block px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs font-mono mb-4">
                   {about.slide1.badge}
                 </div>
-                <h3 className="text-4xl md:text-5xl font-serif leading-tight">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-tight">
                   {about.slide1.title}{" "}
                   <span className="italic text-zinc-500">
                     {about.slide1.titleItalic1}
@@ -105,11 +105,11 @@ export function AboutMe() {
             </div>
 
             <div className="w-1/3 h-full flex flex-col md:flex-row items-center border-r border-zinc-100 dark:border-zinc-900/50">
-              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-12 flex flex-col justify-center gap-8">
+              <div className="w-full md:w-1/2 h-1/2 md:h-full p-4 md:p-12 flex flex-col justify-center gap-4 md:gap-8">
                 <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-mono w-fit">
                   {about.slide2.badge}
                 </div>
-                <h3 className="text-4xl md:text-5xl font-sans font-medium leading-tight">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-sans font-medium leading-tight">
                   {about.slide2.title}
                   <br />
                   {about.slide2.titleLine2}
@@ -157,12 +157,12 @@ export function AboutMe() {
             </div>
 
             <div className="w-1/3 h-full flex items-center justify-center bg-zinc-900 text-zinc-100">
-              <div className="max-w-4xl w-full p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="max-w-4xl w-full p-4 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
                 <div className="space-y-6">
                   <div className="inline-block px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-mono border border-zinc-700">
                     {about.slide3.badge}
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">
+                  <h3 className="text-3xl md:text-5xl font-serif italic text-white leading-tight">
                     {about.slide3.title}
                   </h3>
                   <p className="text-zinc-400 leading-relaxed">
@@ -182,7 +182,7 @@ export function AboutMe() {
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded text-sm font-mono text-zinc-300"
+                        className="px-2 py-1 md:px-3 md:py-1 bg-zinc-800 border border-zinc-700 rounded text-xs md:text-sm font-mono text-zinc-300"
                       >
                         {tech}
                       </span>
@@ -190,7 +190,7 @@ export function AboutMe() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3 md:gap-4">
                   {[
                     {
                       icon: Smartphone,
@@ -215,11 +215,13 @@ export function AboutMe() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="p-6 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:bg-zinc-800 transition-colors"
+                      className="p-3 md:p-6 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:bg-zinc-800 transition-colors"
                     >
-                      <item.icon className="w-8 h-8 mb-4 text-zinc-400" />
-                      <h4 className="font-bold text-lg mb-1">{item.label}</h4>
-                      <p className="text-xs text-zinc-500 font-mono">
+                      <item.icon className="w-5 h-5 mb-2 md:w-8 md:h-8 md:mb-4 text-zinc-400" />
+                      <h4 className="font-bold text-sm md:text-lg mb-1">
+                        {item.label}
+                      </h4>
+                      <p className="text-[10px] md:text-xs text-zinc-500 font-mono leading-tight md:leading-normal">
                         {item.desc}
                       </p>
                     </div>
