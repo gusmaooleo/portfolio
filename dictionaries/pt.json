@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "Sobre mim",
+    "projects": "Projetos",
+    "stack": "Stack",
+    "contactMe": "Contato"
+  },
+  "hero": {
+    "subtitle": "Criando &",
+    "subtitleLine2": "desenvolvendo experiências.",
+    "name": "Leonardo",
+    "role": "Engenheiro de Software & Produto",
+    "scrollLabel": "Role para",
+    "ctaLine1": "ver como posso",
+    "ctaLine2Italic": "resolver seu problema"
+  },
+  "about": {
+    "sideLabel": "Sobre",
+    "sideTitle": "Mim,",
+    "sideTitleLine2": "& O que faço",
+    "slide1": {
+      "badge": "FORMAÇÃO FULLSTACK",
+      "title": "Construindo pontes entre",
+      "titleItalic1": "código",
+      "titleItalic2": "valor de negócio",
+      "description": "Começar como desenvolvedor Fullstack me deu profundidade técnica para entender <strong>como</strong> as coisas funcionam. A transição para Product Engineering me permitiu focar no <strong>porquê</strong> de construí-las. Eu não apenas escrevo código; eu projeto soluções que escalam negócios."
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "Otimizando para impacto,",
+      "titleLine2": "não apenas para entrega.",
+      "stat1Value": "-40%",
+      "stat1Label": "Redução de latência em serviços críticos via refatoração arquitetural",
+      "stat2Value": "2x",
+      "stat2Label": "Retenção de usuários através de fluxos UX/UI reformulados",
+      "diagramLabel": "Diagrama de Arquitetura do Sistema"
+    },
+    "slide3": {
+      "badge": "STACKS & ESCALABILIDADE",
+      "title": "Tecnologia que escala.",
+      "description": "Utilizando ecossistemas modernos para construir aplicações resilientes. Minha stack é escolhida com foco em performance, experiência do desenvolvedor e manutenção de longo prazo.",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "Responsivo & Adaptável" },
+        "dataDriven": { "label": "Data Driven", "desc": "Consultas Otimizadas" },
+        "cleanCode": { "label": "Clean Code", "desc": "Arquitetura Sustentável" },
+        "uiux": { "label": "UI/UX", "desc": "Precisão em cada detalhe" }
+      }
+    },
+    "progressStart": "INÍCIO",
+    "progressEnd": "FIM"
+  },
+  "projects": {
+    "badge": "PROJETOS SELECIONADOS 2024-2026",
+    "title": "Engenharia de",
+    "titleItalic": "Soluções",
+    "architectureFlow": "Fluxo de Arquitetura",
+    "liveSimulation": "Simulação ao Vivo",
+    "items": {
+      "saffira": {
+        "description": "Sistema Multitenant de Inteligência Florestal. Reduzindo o tempo de resposta a incêndios através de visão computacional e trigonometria esférica."
+      },
+      "petly": {
+        "description": "Plataforma de Doações P2P conectando doadores diretamente a ONGs. Inclui pagamentos recorrentes e rastreamento de transparência."
+      },
+      "chainedfile": {
+        "description": "Interface de Armazenamento Descentralizado Web3. Armazenamento seguro e permanente utilizando o protocolo Arweave com on-ramp em moeda fiduciária."
+      },
+      "morpho": {
+        "description": "CLI de Inteligência de Schema para MongoDB. Infere automaticamente estruturas, detecta mudanças de versão e gera scripts de migração."
+      }
+    }
+  },
+  "stack": {
+    "label": "Tecnologias & Especialidades",
+    "title": "Stack",
+    "description": "Ferramentas e tecnologias organizadas por intenção — do motor de execução ao crescimento do produto.",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "Runtimes e linguagens centrais que impulsionam cada sistema que construo — escolhidos por velocidade, confiabilidade e experiência do desenvolvedor."
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "A camada que o usuário vê e sente. Frameworks e gerenciamento de estado escolhidos para performance e UX fluida."
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "Onde os dados vivem. Bancos e plataformas selecionados pelo poder de consulta e capacidades em tempo real."
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "Observabilidade e infraestrutura. Mantendo sistemas saudáveis, mensuráveis e sempre prontos para deploy."
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "Fundamentos de baixo nível: programação de sistemas, algoritmos e o entendimento de como as coisas realmente funcionam."
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "Protocolos descentralizados e camadas de armazenamento imutável. Construindo ambientes trustless com blockchain e dados permanentes."
+      }
+    },
+    "productMindset": {
+      "label": "Mentalidade de Produto",
+      "quote": "\"Eu não apenas escrevo código;\nEu construo alavancas de crescimento.\"",
+      "description": "De monitorar a saúde do sistema com Prometheus a otimizar funis de conversão — cada decisão técnica serve ao produto. Código é o veículo, impacto é o destino."
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "availableLabel": "disponível_para_trabalho",
+    "card": {
+      "label": "// entrar_em_contato",
+      "title": "Estabelecendo conexão...",
+      "quickMessageLabel": "mensagem_rápida",
+      "placeholder": "Digite sua mensagem...",
+      "sending": "> Enviando pacote...",
+      "sent": "> Pacote entregue ✓",
+      "cta": "Seja um produto do zero ou a evolução de um sistema existente,",
+      "ctaBold": "vamos conversar."
+    }
+  },
+  "footer": {
+    "thankYouLine1": "Muito",
+    "thankYouLine2": "Grato.",
+    "controlCenter": "// centro_de_controle",
+    "navigationMatrix": "// matriz_de_navegação",
+    "contextCaption": "> Provavelmente estou assim agora, mas fique à vontade para entrar em contato e responderei o mais breve possível.",
+    "nav": {
+      "engineering": "Engenharia",
+      "designProduct": "Design & Produto",
+      "direct": "Direto",
+      "resume": "Currículo"
+    },
+    "systemBar": {
+      "building": "Construindo Petly & ChainedFile",
+      "operational": "Todos os sistemas operacionais"
+    }
+  },
+  "notFound": {
+    "title": "Não encontrado",
+    "description": "Não foi possível encontrar o recurso solicitado",
+    "cta": "Voltar para a página inicial"
+  }
+}

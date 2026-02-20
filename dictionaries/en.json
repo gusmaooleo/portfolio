@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "About me",
+    "projects": "Projects",
+    "stack": "Stack",
+    "contactMe": "Contact-me"
+  },
+  "hero": {
+    "subtitle": "Creating &",
+    "subtitleLine2": "developing experiences.",
+    "name": "Leonardo",
+    "role": "Software & Product Engineer",
+    "scrollLabel": "Scroll down to",
+    "ctaLine1": "see how can I",
+    "ctaLine2Italic": "solve your problem"
+  },
+  "about": {
+    "sideLabel": "About",
+    "sideTitle": "Me, Myself",
+    "sideTitleLine2": "& I",
+    "slide1": {
+      "badge": "FULLSTACK BACKGROUND",
+      "title": "Building bridges between",
+      "titleItalic1": "code",
+      "titleItalic2": "business value",
+      "description": "Starting as a Fullstack developer gave me the technical depth to understand <strong>how</strong> things works. Transitioning to Product Engineering allowed me to focus on <strong>why</strong> we build them. I don't just write code; I architect solutions that scale businesses."
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "Optimizing for impact,",
+      "titleLine2": "not just output.",
+      "stat1Value": "-40%",
+      "stat1Label": "Latency in core services via architectural refactoring",
+      "stat2Value": "2x",
+      "stat2Label": "User retention through revamped UX/UI flows",
+      "diagramLabel": "System Architecture Diagram"
+    },
+    "slide3": {
+      "badge": "STACKS & SCALABILITY",
+      "title": "Tech that scales.",
+      "description": "Leveraging modern ecosystems to build resilient applications. My toolbox is selected for performance, developer experience, and long-term maintainability.",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "Responsive & Adaptive" },
+        "dataDriven": { "label": "Data Driven", "desc": "Optimized Queries" },
+        "cleanCode": { "label": "Clean Code", "desc": "Maintainable Architecture" },
+        "uiux": { "label": "UI/UX", "desc": "Pixel Perfect" }
+      }
+    },
+    "progressStart": "START",
+    "progressEnd": "END"
+  },
+  "projects": {
+    "badge": "SELECTED WORKS 2024-2026",
+    "title": "Engineering",
+    "titleItalic": "Solutions",
+    "architectureFlow": "Architecture Flow",
+    "liveSimulation": "Live Simulation",
+    "items": {
+      "saffira": {
+        "description": "Multitenant Forest Intelligence System. Reducing response time to wildfires through computer vision and spherical trigonometry."
+      },
+      "petly": {
+        "description": "P2P Donation Platform connecting donors directly to ONGs. Features recurring payments and transparency tracking."
+      },
+      "chainedfile": {
+        "description": "Web3 Decentralized Storage Interface. Secure, permanent file storage using Arweave protocol with fiat on-ramping."
+      },
+      "morpho": {
+        "description": "Schema Intelligence CLI for MongoDB. Automatically infers structure, detects version changes, and generates migration scripts."
+      }
+    }
+  },
+  "stack": {
+    "label": "Technologies & Expertise",
+    "title": "Stack",
+    "description": "Tools and technologies, grouped by intent — from the runtime engine to the growth lever.",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "Core runtimes and languages that power every system I build — chosen for speed, reliability, and developer experience."
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "The layer users see and feel. Frameworks and state management picked for performance and seamless UX."
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "Where data lives. Databases and platforms selected for their query power and real-time capabilities."
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "Observability and infrastructure. Keeping systems healthy, measurable, and always deployable."
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "Low-level foundations: systems programming, algorithms, and the understanding of how things actually work."
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "Decentralized protocols and immutable storage layers. Building trustless environments with blockchain and permanent data."
+      }
+    },
+    "productMindset": {
+      "label": "Product Mindset",
+      "quote": "\"I don't just write code;\nI build levers for growth.\"",
+      "description": "From monitoring system health with Prometheus to optimizing conversion funnels — every technical decision serves the product. Code is the vehicle, impact is the destination."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "availableLabel": "available_for_work",
+    "card": {
+      "label": "// get_in_touch",
+      "title": "Establishing connection...",
+      "quickMessageLabel": "quick_message",
+      "placeholder": "Type your message...",
+      "sending": "> Sending packet...",
+      "sent": "> Packet delivered ✓",
+      "cta": "Whether it's a product from scratch or scaling an existing engine,",
+      "ctaBold": "let's talk."
+    }
+  },
+  "footer": {
+    "thankYouLine1": "Thank",
+    "thankYouLine2": "You.",
+    "controlCenter": "// control_center",
+    "navigationMatrix": "// navigation_matrix",
+    "contextCaption": "> Probably I am looking like this right now, but feel free to reach out and I'll get back to you as soon as possible.",
+    "nav": {
+      "engineering": "Engineering",
+      "designProduct": "Design & Product",
+      "direct": "Direct",
+      "resume": "Resume"
+    },
+    "systemBar": {
+      "building": "Building Petly & ChainedFile",
+      "operational": "All systems operational"
+    }
+  },
+  "notFound": {
+    "title": "Not Found",
+    "description": "Could not find requested resource",
+    "cta": "Return Home"
+  }
+}

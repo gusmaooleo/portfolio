@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useMemo } from "react";
+import { useDictionary } from "@/components/dictionary-provider";
 
 const axes = [
   { label: "Interface", value: 90 },
@@ -162,6 +163,7 @@ function RadarChart() {
 }
 
 export function ProductMindset() {
+  const { stack } = useDictionary();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -174,20 +176,17 @@ export function ProductMindset() {
       <div className="flex-1 space-y-6">
         <div className="space-y-1">
           <span className="font-mono text-[10px] tracking-widest text-orange-500 dark:text-orange-400 uppercase">
-            Product Mindset
+            {stack.productMindset.label}
           </span>
           <div className="w-8 h-px bg-orange-500/50 dark:bg-orange-400/50" />
         </div>
 
         <blockquote className="text-2xl md:text-3xl font-serif italic font-medium text-zinc-800 dark:text-zinc-200 leading-snug tracking-tight">
-          &ldquo;I don&apos;t just write code;
-          <br />I build levers for growth.&rdquo;
+          {stack.productMindset.quote}
         </blockquote>
 
         <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-md">
-          From monitoring system health with Prometheus to optimizing conversion
-          funnels — every technical decision serves the product. Code is the
-          vehicle, impact is the destination.
+          {stack.productMindset.description}
         </p>
 
         <div className="flex flex-wrap gap-2 pt-2">

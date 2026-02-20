@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
+import { useDictionary } from "@/components/dictionary-provider";
 
 type SendState = "idle" | "sending" | "sent";
 
@@ -32,6 +33,7 @@ export function ContactCard() {
   const [sendState, setSendState] = useState<SendState>("idle");
   const sendingTimeoutRef = useRef<number | null>(null);
   const resetTimeoutRef = useRef<number | null>(null);
+  const { contact } = useDictionary();
 
   useEffect(
     () => () => {
@@ -76,10 +78,10 @@ export function ContactCard() {
     >
       <div className="mb-6">
         <span className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-2">
-          {"// get_in_touch"}
+          {contact.card.label}
         </span>
         <h3 className="font-serif italic text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight">
-          Establishing connection...
+          {contact.card.title}
         </h3>
       </div>
 
@@ -111,7 +113,7 @@ export function ContactCard() {
 
       <div className="mb-6">
         <label className="font-mono text-[10px] tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-2">
-          quick_message
+          {contact.card.quickMessageLabel}
         </label>
         <div className="flex gap-2">
           <input
@@ -119,7 +121,7 @@ export function ContactCard() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Type your message..."
+            placeholder={contact.card.placeholder}
             disabled={sendState !== "idle"}
             className="flex-1 px-4 py-2.5 rounded-xl font-mono text-xs
               bg-white/60 dark:bg-zinc-800/60
@@ -156,7 +158,7 @@ export function ContactCard() {
                 exit={{ opacity: 0, y: -4 }}
                 className="font-mono text-[10px] text-orange-500 tracking-wider"
               >
-                {">"} Sending packet...
+                {contact.card.sending}
               </motion.span>
             )}
             {sendState === "sent" && (
@@ -167,7 +169,7 @@ export function ContactCard() {
                 exit={{ opacity: 0, y: -4 }}
                 className="font-mono text-[10px] text-green-500 tracking-wider"
               >
-                {">"} Packet delivered ✓
+                {contact.card.sent}
               </motion.span>
             )}
           </AnimatePresence>
@@ -175,9 +177,9 @@ export function ContactCard() {
       </div>
 
       <p className="font-sans text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-        Whether it&apos;s a product from scratch or scaling an existing engine,{" "}
+        {contact.card.cta}{" "}
         <span className="text-zinc-700 dark:text-zinc-300 font-medium">
-          let&apos;s talk.
+          {contact.card.ctaBold}
         </span>
       </p>
     </motion.div>

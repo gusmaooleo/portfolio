@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useDictionary } from "@/components/dictionary-provider";
 
 function formatClockTime() {
   const now = new Date();
@@ -80,6 +81,7 @@ function LiveClock() {
 }
 
 export function FooterSystemBar() {
+  const { footer } = useDictionary();
   return (
     <motion.div
       variants={{
@@ -112,7 +114,7 @@ export function FooterSystemBar() {
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-orange-500" />
           </span>
           <span className="text-orange-500 dark:text-orange-400 normal-case tracking-wide text-[9px] font-medium">
-            Building Petly & ChainedFile
+            {footer.systemBar.building}
           </span>
         </div>
 
@@ -122,7 +124,7 @@ export function FooterSystemBar() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
           </span>
-          <span>All systems operational</span>
+          <span>{footer.systemBar.operational}</span>
         </div>
       </div>
     </motion.div>

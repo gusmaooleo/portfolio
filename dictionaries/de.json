@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "Über mich",
+    "projects": "Projekte",
+    "stack": "Stack",
+    "contactMe": "Kontakt"
+  },
+  "hero": {
+    "subtitle": "Gestalten &",
+    "subtitleLine2": "Erlebnisse entwickeln.",
+    "name": "Leonardo",
+    "role": "Software- & Product Engineer",
+    "scrollLabel": "Nach unten scrollen, um",
+    "ctaLine1": "zu sehen, wie ich",
+    "ctaLine2Italic": "Ihr Problem lösen kann"
+  },
+  "about": {
+    "sideLabel": "Über",
+    "sideTitle": "Mich",
+    "sideTitleLine2": "",
+    "slide1": {
+      "badge": "FULLSTACK-HINTERGRUND",
+      "title": "Brücken bauen zwischen",
+      "titleItalic1": "Code",
+      "titleItalic2": "Geschäftswert",
+      "description": "Als Fullstack-Entwickler gestartet, habe ich die technische Tiefe gewonnen, um zu verstehen, <strong>wie</strong> Dinge funktionieren. Der Übergang zu Product Engineering erlaubte mir, mich auf das <strong>Warum</strong> zu konzentrieren. Ich schreibe nicht nur Code; ich architektonisch gestalte Lösungen, die Unternehmen skalieren."
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "Optimierung für Wirkung,",
+      "titleLine2": "nicht nur für Output.",
+      "stat1Value": "-40%",
+      "stat1Label": "Reduzierte Latenz in Kernservices durch architektonische Refaktorierung",
+      "stat2Value": "2x",
+      "stat2Label": "Verdoppelte Nutzerbindung durch überarbeitete UX/UI-Flows",
+      "diagramLabel": "Systemarchitektur-Diagramm"
+    },
+    "slide3": {
+      "badge": "STACKS & SKALIERBARKEIT",
+      "title": "Technologie, die skaliert.",
+      "description": "Nutzung moderner Ökosysteme zum Aufbau resilienter Anwendungen. Meine Tool-Auswahl basiert auf Performance, Developer Experience und langfristiger Wartbarkeit.",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "Responsiv & Adaptiv" },
+        "dataDriven": { "label": "Data Driven", "desc": "Optimierte Abfragen" },
+        "cleanCode": { "label": "Clean Code", "desc": "Wartbare Architektur" },
+        "uiux": { "label": "UI/UX", "desc": "Pixelgenaue Präzision" }
+      }
+    },
+    "progressStart": "START",
+    "progressEnd": "ENDE"
+  },
+  "projects": {
+    "badge": "AUSGEWÄHLTE ARBEITEN 2024-2026",
+    "title": "Engineering-",
+    "titleItalic": "Lösungen",
+    "architectureFlow": "Architektur-Flow",
+    "liveSimulation": "Live-Simulation",
+    "items": {
+      "saffira": {
+        "description": "Multitenantes Forest-Intelligence-System. Reduziert die Reaktionszeit auf Waldbrände durch Computer Vision und sphärische Trigonometrie."
+      },
+      "petly": {
+        "description": "P2P-Spendenplattform, die Spender direkt mit NGOs verbindet. Mit wiederkehrenden Zahlungen und Transparenz-Tracking."
+      },
+      "chainedfile": {
+        "description": "Web3-Decentralized-Storage-Interface. Sichere, permanente Dateispeicherung über das Arweave-Protokoll mit Fiat-On-Ramp."
+      },
+      "morpho": {
+        "description": "Schema Intelligence CLI für MongoDB. Erkennt automatisch Strukturen, detektiert Versionsänderungen und generiert Migrationsskripte."
+      }
+    }
+  },
+  "stack": {
+    "label": "Technologien & Expertise",
+    "title": "Stack",
+    "description": "Tools und Technologien, nach Zweck gruppiert — vom Runtime-Engine bis zum Wachstumshebel.",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "Zentrale Runtimes und Sprachen, die jedes System antreiben — ausgewählt nach Geschwindigkeit, Zuverlässigkeit und Developer Experience."
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "Die Ebene, die Nutzer sehen und erleben. Frameworks und State-Management für Performance und nahtlose UX."
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "Hier leben die Daten. Datenbanken und Plattformen ausgewählt nach Abfrageleistung und Echtzeit-Fähigkeiten."
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "Observability und Infrastruktur. Systeme gesund, messbar und jederzeit deploybar halten."
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "Low-Level-Grundlagen: Systemprogrammierung, Algorithmen und das Verständnis, wie Dinge wirklich funktionieren."
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "Dezentrale Protokolle und unveränderliche Speicherschichten. Aufbau trustless Umgebungen mit Blockchain und permanenten Daten."
+      }
+    },
+    "productMindset": {
+      "label": "Product Mindset",
+      "quote": "\"Ich schreibe nicht nur Code;\nIch baue Wachstumshebel.\"",
+      "description": "Von der Überwachung der Systemgesundheit mit Prometheus bis zur Optimierung von Conversion-Funnels — jede technische Entscheidung dient dem Produkt. Code ist das Vehikel, Wirkung ist das Ziel."
+    }
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "availableLabel": "verfügbar_für_arbeit",
+    "card": {
+      "label": "// kontakt_aufnehmen",
+      "title": "Verbindung wird hergestellt...",
+      "quickMessageLabel": "kurznachricht",
+      "placeholder": "Nachricht eingeben...",
+      "sending": "> Paket wird gesendet...",
+      "sent": "> Paket zugestellt ✓",
+      "cta": "Ob ein Produkt von Grund auf oder die Skalierung einer bestehenden Engine,",
+      "ctaBold": "lassen Sie uns sprechen."
+    }
+  },
+  "footer": {
+    "thankYouLine1": "Vielen",
+    "thankYouLine2": "Danke.",
+    "controlCenter": "// kontrollzentrum",
+    "navigationMatrix": "// navigationsmatrix",
+    "contextCaption": "> Wahrscheinlich sehe ich gerade so aus, aber kontaktieren Sie mich gern und ich melde mich so schnell wie möglich zurück.",
+    "nav": {
+      "engineering": "Engineering",
+      "designProduct": "Design & Produkt",
+      "direct": "Direkt",
+      "resume": "Lebenslauf"
+    },
+    "systemBar": {
+      "building": "Building Petly & ChainedFile",
+      "operational": "Alle Systeme betriebsbereit"
+    }
+  },
+  "notFound": {
+    "title": "Nicht gefunden",
+    "description": "Die angeforderte Ressource konnte nicht gefunden werden",
+    "cta": "Zurück zur Startseite"
+  }
+}

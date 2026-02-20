@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useDictionary } from "@/components/dictionary-provider";
 
 interface FooterLink {
   label: string;
@@ -45,9 +46,21 @@ const cellVariants = {
 };
 
 export function NavigationMatrix() {
+  const { footer } = useDictionary();
+
+  const translatedGroups = linkGroups.map((group) => {
+    const key =
+      group.title === "Engineering"
+        ? "engineering"
+        : group.title === "Design & Product"
+          ? "designProduct"
+          : "direct";
+    return { ...group, title: footer.nav[key as keyof typeof footer.nav] };
+  });
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
-      {linkGroups.map((group, gi) => (
+      {translatedGroups.map((group, gi) => (
         <motion.div
           key={group.title}
           variants={{

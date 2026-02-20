@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "Sobre mí",
+    "projects": "Proyectos",
+    "stack": "Stack",
+    "contactMe": "Contacto"
+  },
+  "hero": {
+    "subtitle": "Creando &",
+    "subtitleLine2": "desarrollando experiencias.",
+    "name": "Leonardo",
+    "role": "Ingeniero de Software & Producto",
+    "scrollLabel": "Desplázate hacia abajo para",
+    "ctaLine1": "ver cómo puedo",
+    "ctaLine2Italic": "resolver tu problema"
+  },
+  "about": {
+    "sideLabel": "Sobre",
+    "sideTitle": "Mí",
+    "sideTitleLine2": "",
+    "slide1": {
+      "badge": "FORMACIÓN FULLSTACK",
+      "title": "Construyendo puentes entre",
+      "titleItalic1": "código",
+      "titleItalic2": "valor de negocio",
+      "description": "Comenzar como desarrollador Fullstack me dio la profundidad técnica para entender <strong>cómo</strong> funcionan las cosas. La transición a Product Engineering me permitió enfocarme en el <strong>por qué</strong> las construimos. No solo escribo código; diseño soluciones que escalan negocios."
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "Optimizando para el impacto,",
+      "titleLine2": "no solo para la producción.",
+      "stat1Value": "-40%",
+      "stat1Label": "Reducción de latencia en servicios centrales mediante refactorización arquitectónica",
+      "stat2Value": "2x",
+      "stat2Label": "Duplicación de la retención de usuarios gracias a flujos UX/UI renovados",
+      "diagramLabel": "Diagrama de Arquitectura del Sistema"
+    },
+    "slide3": {
+      "badge": "STACKS & ESCALABILIDAD",
+      "title": "Tecnología que escala.",
+      "description": "Aprovechando ecosistemas modernos para construir aplicaciones resilientes. Mi stack está seleccionada por rendimiento, experiencia del desarrollador y mantenibilidad a largo plazo.",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "Responsivo & Adaptativo" },
+        "dataDriven": { "label": "Data Driven", "desc": "Consultas Optimizadas" },
+        "cleanCode": { "label": "Clean Code", "desc": "Arquitectura Mantenible" },
+        "uiux": { "label": "UI/UX", "desc": "Precisión Pixel Perfect" }
+      }
+    },
+    "progressStart": "INICIO",
+    "progressEnd": "FIN"
+  },
+  "projects": {
+    "badge": "TRABAJOS SELECCIONADOS 2024-2026",
+    "title": "Ingeniería de",
+    "titleItalic": "Soluciones",
+    "architectureFlow": "Flujo de Arquitectura",
+    "liveSimulation": "Simulación en Vivo",
+    "items": {
+      "saffira": {
+        "description": "Sistema Multitenant de Inteligencia Forestal. Reduce el tiempo de respuesta a incendios mediante visión computacional y trigonometría esférica."
+      },
+      "petly": {
+        "description": "Plataforma de donaciones P2P que conecta donantes directamente con ONGs. Incluye pagos recurrentes y seguimiento de transparencia."
+      },
+      "chainedfile": {
+        "description": "Interfaz de almacenamiento descentralizado Web3. Almacenamiento seguro y permanente utilizando el protocolo Arweave con integración fiat."
+      },
+      "morpho": {
+        "description": "Schema Intelligence CLI para MongoDB. Infiere automáticamente estructuras, detecta cambios de versión y genera scripts de migración."
+      }
+    }
+  },
+  "stack": {
+    "label": "Tecnologías & Especialización",
+    "title": "Stack",
+    "description": "Herramientas y tecnologías agrupadas por intención — desde el motor de ejecución hasta la palanca de crecimiento.",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "Runtimes y lenguajes centrales que impulsan cada sistema que construyo — elegidos por velocidad, fiabilidad y experiencia del desarrollador."
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "La capa que los usuarios ven y sienten. Frameworks y gestión de estado seleccionados para rendimiento y UX fluida."
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "Donde viven los datos. Bases de datos y plataformas seleccionadas por su potencia de consulta y capacidades en tiempo real."
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "Observabilidad e infraestructura. Manteniendo sistemas saludables, medibles y siempre listos para deploy."
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "Fundamentos de bajo nivel: programación de sistemas, algoritmos y comprensión profunda de cómo funcionan realmente las cosas."
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "Protocolos descentralizados y capas de almacenamiento inmutable. Construyendo entornos trustless con blockchain y datos permanentes."
+      }
+    },
+    "productMindset": {
+      "label": "Mentalidad de Producto",
+      "quote": "\"No solo escribo código;\nconstruyo palancas de crecimiento.\"",
+      "description": "Desde monitorear la salud del sistema con Prometheus hasta optimizar funnels de conversión — cada decisión técnica sirve al producto. El código es el vehículo, el impacto es el destino."
+    }
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "availableLabel": "disponible_para_trabajo",
+    "card": {
+      "label": "// contacto",
+      "title": "Estableciendo conexión...",
+      "quickMessageLabel": "mensaje_rápido",
+      "placeholder": "Escribe tu mensaje...",
+      "sending": "> Enviando paquete...",
+      "sent": "> Paquete entregado ✓",
+      "cta": "Ya sea un producto desde cero o escalar un motor existente,",
+      "ctaBold": "hablemos."
+    }
+  },
+  "footer": {
+    "thankYouLine1": "Muchas",
+    "thankYouLine2": "Gracias.",
+    "controlCenter": "// centro_de_control",
+    "navigationMatrix": "// matriz_de_navegación",
+    "contextCaption": "> Probablemente estoy así ahora mismo, pero siéntete libre de contactarme y te responderé lo antes posible.",
+    "nav": {
+      "engineering": "Ingeniería",
+      "designProduct": "Diseño & Producto",
+      "direct": "Directo",
+      "resume": "Currículum"
+    },
+    "systemBar": {
+      "building": "Building Petly & ChainedFile",
+      "operational": "Todos los sistemas operativos"
+    }
+  },
+  "notFound": {
+    "title": "No Encontrado",
+    "description": "No se pudo encontrar el recurso solicitado",
+    "cta": "Volver al Inicio"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "私について",
+    "projects": "プロジェクト",
+    "stack": "Stack",
+    "contactMe": "お問い合わせ"
+  },
+  "hero": {
+    "subtitle": "創造し &",
+    "subtitleLine2": "体験を構築する。",
+    "name": "Leonardo",
+    "role": "ソフトウェア & プロダクトエンジニア",
+    "scrollLabel": "スクロールして",
+    "ctaLine1": "私がどのように",
+    "ctaLine2Italic": "課題を解決できるかを見る"
+  },
+  "about": {
+    "sideLabel": "概要",
+    "sideTitle": "私について",
+    "sideTitleLine2": "",
+    "slide1": {
+      "badge": "FULLSTACK バックグラウンド",
+      "title": "",
+      "titleItalic1": "コード",
+      "titleItalic2": "とビジネス価値をつなぐ",
+      "description": "Fullstack 開発者としてキャリアをスタートしたことで、物事が<strong>どのように</strong>動くのかを深く理解する技術力を身につけました。Product Engineering へ移行することで、<strong>なぜ</strong>それを構築するのかに焦点を当てられるようになりました。私は単にコードを書くのではなく、ビジネスをスケールさせるソリューションを設計します。"
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "成果ではなく、",
+      "titleLine2": "インパクトを最適化する。",
+      "stat1Value": "-40%",
+      "stat1Label": "アーキテクチャ改善により主要サービスのレイテンシを削減",
+      "stat2Value": "2x",
+      "stat2Label": "UX/UI フロー刷新によるユーザー維持率向上",
+      "diagramLabel": "システムアーキテクチャ図"
+    },
+    "slide3": {
+      "badge": "STACK & スケーラビリティ",
+      "title": "スケールする技術。",
+      "description": "最新のエコシステムを活用し、レジリエントなアプリケーションを構築します。私のツール選定は、パフォーマンス、開発者体験、そして長期的な保守性を基準としています。",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "レスポンシブ & アダプティブ" },
+        "dataDriven": { "label": "Data Driven", "desc": "最適化されたクエリ" },
+        "cleanCode": { "label": "Clean Code", "desc": "保守性の高いアーキテクチャ" },
+        "uiux": { "label": "UI/UX", "desc": "ピクセル単位の精度" }
+      }
+    },
+    "progressStart": "開始",
+    "progressEnd": "終了"
+  },
+  "projects": {
+    "badge": "主な実績 2024-2026",
+    "title": "エンジニアリング",
+    "titleItalic": "ソリューション",
+    "architectureFlow": "アーキテクチャフロー",
+    "liveSimulation": "ライブシミュレーション",
+    "items": {
+      "saffira": {
+        "description": "マルチテナント型森林インテリジェンスシステム。コンピュータビジョンと球面三角法により山火事への対応時間を短縮。"
+      },
+      "petly": {
+        "description": "寄付者と NGO を直接つなぐ P2P 寄付プラットフォーム。定期支払いと透明性トラッキング機能を搭載。"
+      },
+      "chainedfile": {
+        "description": "Web3 分散型ストレージインターフェース。Arweave プロトコルを活用した安全で永続的なファイル保存と法定通貨オンランプ対応。"
+      },
+      "morpho": {
+        "description": "MongoDB 向け Schema Intelligence CLI。構造を自動推論し、バージョン変更を検出、マイグレーションスクリプトを生成。"
+      }
+    }
+  },
+  "stack": {
+    "label": "技術 & 専門領域",
+    "title": "Stack",
+    "description": "ランタイムエンジンから成長レバーまで、目的別に整理されたツールと技術。",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "すべてのシステムを支える中核ランタイムと言語。速度・信頼性・開発者体験を基準に選定。"
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "ユーザーが目にし、体験するレイヤー。パフォーマンスとシームレスな UX を実現するフレームワークと状態管理。"
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "データが存在する場所。強力なクエリ性能とリアルタイム機能を備えたデータベースとプラットフォーム。"
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "Observability とインフラ。システムを健全かつ測定可能に保ち、常にデプロイ可能な状態に。"
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "低レベル基盤：システムプログラミング、アルゴリズム、そして本質的理解。"
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "分散型プロトコルと不変ストレージ層。ブロックチェーンと永続データによる trustless 環境構築。"
+      }
+    },
+    "productMindset": {
+      "label": "プロダクト思考",
+      "quote": "「私はただコードを書くのではない。\n成長のレバーを構築する。」",
+      "description": "Prometheus によるシステム監視からコンバージョン最適化まで、すべての技術的判断はプロダクトのためにある。コードは手段であり、インパクトこそが目的。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "availableLabel": "業務対応可能",
+    "card": {
+      "label": "// contact",
+      "title": "接続を確立中...",
+      "quickMessageLabel": "クイックメッセージ",
+      "placeholder": "メッセージを入力...",
+      "sending": "> パケット送信中...",
+      "sent": "> パケット送信完了 ✓",
+      "cta": "ゼロからのプロダクト開発でも、既存エンジンのスケールでも、",
+      "ctaBold": "ぜひご相談ください。"
+    }
+  },
+  "footer": {
+    "thankYouLine1": "ありがとう",
+    "thankYouLine2": "ございます。",
+    "controlCenter": "// control_center",
+    "navigationMatrix": "// navigation_matrix",
+    "contextCaption": "> 今はこんな感じかもしれませんが、いつでもお気軽にご連絡ください。できるだけ早く返信いたします。",
+    "nav": {
+      "engineering": "エンジニアリング",
+      "designProduct": "デザイン & プロダクト",
+      "direct": "直接連絡",
+      "resume": "履歴書"
+    },
+    "systemBar": {
+      "building": "Building Petly & ChainedFile",
+      "operational": "すべてのシステムは正常稼働中"
+    }
+  },
+  "notFound": {
+    "title": "見つかりません",
+    "description": "要求されたリソースが見つかりませんでした",
+    "cta": "ホームへ戻る"
+  }
+}

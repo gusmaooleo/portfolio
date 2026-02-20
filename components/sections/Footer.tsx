@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ContextCard } from "./footer/ContextCard";
 import { NavigationMatrix } from "./footer/ConnectionGrid";
 import { FooterSystemBar } from "./footer/FooterSystemBar";
+import { useDictionary } from "@/components/dictionary-provider";
 
 const staggerContainer = {
   hidden: {},
@@ -16,11 +17,12 @@ const staggerContainer = {
 };
 
 export function Footer() {
+  const { footer } = useDictionary();
   return (
     <footer className="relative w-full bg-zinc-50 dark:bg-zinc-950 overflow-hidden">
       <div className="absolute top-0 left-0 pointer-events-none select-none z-0">
         <h1 className="text-6xl md:text-8xl font-black font-sans text-zinc-900 dark:text-zinc-100 opacity-100 mix-blend-multiply dark:mix-blend-overlay leading-[0.85]">
-          Thank <br /> You.
+          {footer.thankYouLine1} <br /> {footer.thankYouLine2}
         </h1>
       </div>
       <div
@@ -53,7 +55,7 @@ export function Footer() {
               }}
               className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-600 uppercase block mb-12"
             >
-              {"// control_center"}
+              {footer.controlCenter}
             </motion.span>
           </div>
 
@@ -77,7 +79,7 @@ export function Footer() {
               }}
               className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-600 uppercase"
             >
-              {"// navigation_matrix"}
+              {footer.navigationMatrix}
             </motion.span>
             <NavigationMatrix />
           </motion.div>

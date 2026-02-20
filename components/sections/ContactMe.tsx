@@ -5,11 +5,13 @@ import { PixelTrail } from "../ui/pixel-trail";
 import { PersonalBadge } from "./contact-me/PersonalBadge";
 import { SystemIdMeta } from "./contact-me/SystemIdMeta";
 import { ContactCard } from "./contact-me/ContactCard";
+import { useDictionary } from "@/components/dictionary-provider";
 
 export function ContactMe() {
   const badgeContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const { contact } = useDictionary();
 
   useEffect(() => {
     const container = badgeContainerRef.current;
@@ -61,12 +63,12 @@ export function ContactMe() {
             <div className="relative h-full md:col-span-6 lg:col-start-2 lg:col-span-5">
               <div className="absolute top-32 left-0 pointer-events-auto">
                 <h2 className="font-serif italic text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-none mb-6">
-                  Get In Touch
+                  {contact.title}
                 </h2>
                 <div className="flex items-center gap-3">
                   <span className="h-px w-12 bg-orange-500/70" />
                   <span className="font-mono text-xs tracking-widest text-zinc-500 dark:text-zinc-400 uppercase">
-                    available_for_work
+                    {contact.availableLabel}
                   </span>
                 </div>
               </div>

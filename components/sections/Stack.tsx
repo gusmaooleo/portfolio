@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { StackCard } from "../stack/StackCard";
 import { ProductMindset } from "../stack/ProductMindset";
 import { LiquidGradient } from "../ui/flow-gradient-hero-section";
+import { useDictionary } from "@/components/dictionary-provider";
 
 const stackCategories = [
   {
@@ -113,6 +114,22 @@ const stackCategories = [
 ];
 
 export function StackSection() {
+  const { stack } = useDictionary();
+  const categoryKeys = [
+    "theEngine",
+    "theInterface",
+    "theVault",
+    "theWatchtower",
+    "theBedrock",
+    "theLedger",
+  ] as const;
+
+  const translatedCategories = stackCategories.map((cat, i) => ({
+    ...cat,
+    title: stack.categories[categoryKeys[i]].title,
+    description: stack.categories[categoryKeys[i]].description,
+  }));
+
   return (
     <section
       id="stack"
@@ -131,19 +148,18 @@ export function StackSection() {
           className="mb-16 md:mb-24 md:col-span-12 lg:col-start-2 lg:col-span-8"
         >
           <span className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-500 uppercase block mb-4">
-            Technologies & Expertise
+            {stack.label}
           </span>
           <h2 className="text-4xl md:text-5xl font-serif font-medium text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
-            Stack
+            {stack.title}
           </h2>
           <p className="mt-6 text-lg text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed">
-            Tools and technologies, grouped by intent — from the runtime engine
-            to the growth lever.
+            {stack.description}
           </p>
         </motion.div>
 
         <div className="md:col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--grid-gap-mobile)] md:gap-[var(--grid-gutter)]">
-          {stackCategories.map((category, index) => (
+          {translatedCategories.map((category, index) => (
             <StackCard
               key={category.title}
               title={category.title}

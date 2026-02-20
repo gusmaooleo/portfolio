@@ -1,24 +1,37 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ChevronDown, Check } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { i18n, type Locale } from "@/i18n-config";
 
 const languages = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "pt-BR", label: "Português", flag: "🇧🇷" },
-  { code: "zh-CN", label: "简体中文", flag: "🇨🇳" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "ja", label: "日本語", flag: "🇯🇵" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "en" as Locale, label: "English", flag: "🇺🇸" },
+  { code: "pt" as Locale, label: "Português", flag: "🇧🇷" },
+  { code: "cn" as Locale, label: "简体中文", flag: "🇨🇳" },
+  { code: "es" as Locale, label: "Español", flag: "🇪🇸" },
+  { code: "jp" as Locale, label: "日本語", flag: "🇯🇵" },
+  { code: "de" as Locale, label: "Deutsch", flag: "🇩🇪" },
 ];
 
 export const LanguageSelectorDropdown = () => {
-  const [selected, setSelected] = useState(languages[0]);
+  const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!open) return;
+  // Derive current locale from URL
+  const currentLocale =
+    i18n.locales.find(
+      (locale) =>
+        pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+    ) ?? i18n.defaultLocale;
 
+  const selected =
+    languages.find((l) => l.code === currentLocale) ?? languages[0];
+
+  useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (
         dropdownRef.current &&
@@ -29,7 +42,15 @@ export const LanguageSelectorDropdown = () => {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [open]);
+  }, []);
+
+  const handleLanguageChange = (lang: Locale) => {
+    // Replace the current locale segment in the path
+    const segments = pathname.split("/");
+    segments[1] = lang;
+    router.push(segments.join("/"));
+    setOpen(false);
+  };
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>
@@ -48,7 +69,7 @@ export const LanguageSelectorDropdown = () => {
         <ChevronDown className="h-4 w-4" />
       </button>
 
-      {/* Dropdown Menu */}
+      {/* Dropdown */}
       {open && (
         <div
           className={cn(
@@ -65,22 +86,16 @@ export const LanguageSelectorDropdown = () => {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
-                setSelected(lang);
-                setOpen(false);
-              }}
+              onClick={() => handleLanguageChange(lang.code)}
               className={cn(
-                "flex items-center gap-2 w-full px-3 py-2 text-sm text-left transition-colors",
-                selected.code === lang.code
-                  ? "font-semibold text-blue-600 dark:text-blue-400"
-                  : "text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-800",
+                "flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors",
+                lang.code === currentLocale
+                  ? "bg-gray-100 dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 font-medium"
+                  : "text-gray-600 dark:text-neutral-400 hover:bg-gray-50 dark:hover:bg-neutral-800/50",
               )}
             >
-              <span>{lang.flag}</span>
-              <span className="flex-1">{lang.label}</span>
-              {selected.code === lang.code && (
-                <Check className="h-4 w-4 text-blue-500 dark:text-blue-400" />
-              )}
+              <span className="text-base">{lang.flag}</span>
+              <span>{lang.label}</span>
             </button>
           ))}
         </div>

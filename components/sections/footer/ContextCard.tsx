@@ -3,8 +3,10 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useDictionary } from "@/components/dictionary-provider";
 
 export function ContextCard() {
+  const { footer } = useDictionary();
   const cardRef = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0.5);
@@ -98,8 +100,7 @@ export function ContextCard() {
       <div className="px-4 py-3 border-t border-zinc-200/40 dark:border-zinc-800/40">
         <p className="font-mono text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-500 tracking-wide">
           <span className="text-zinc-400 dark:text-zinc-600">{">"}</span>{" "}
-          Probably I am looking like this right now, but feel free to reach out
-          and I&apos;ll get back to you as soon as possible.
+          {footer.contextCaption.replace(/^> /, "")}
         </p>
       </div>
     </motion.div>

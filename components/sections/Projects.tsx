@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArchitectureDiagram } from "../projects/ArchitectureDiagram";
 import { ProjectCard, ProjectCardProps } from "../projects/ProjectCard";
+import { useDictionary } from "@/components/dictionary-provider";
 
 const projects: ProjectCardProps[] = [
   {
@@ -56,24 +57,29 @@ const projects: ProjectCardProps[] = [
 
 export function ProjectsSection() {
   const [activeProject, setActiveProject] = useState("saffira");
+  const { projects: projectsDict } = useDictionary();
+
+  const translatedProjects = projects.map((p) => ({
+    ...p,
+    description:
+      projectsDict.items[p.id as keyof typeof projectsDict.items]
+        ?.description ?? p.description,
+  }));
 
   return (
-    <section
-      id="projects"
-      className="relative bg-zinc-50 dark:bg-zinc-950"
-    >
+    <section id="projects" className="relative bg-zinc-50 dark:bg-zinc-950">
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-1/2 h-screen sticky top-0 border-r border-zinc-200 dark:border-zinc-800 z-10 hidden lg:block overflow-hidden">
           <ArchitectureDiagram activeProject={activeProject} />
 
           <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
             <h4 className="text-xs font-mono uppercase text-zinc-400 mb-1">
-              Architecture Flow
+              {projectsDict.architectureFlow}
             </h4>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               <span className="text-sm font-bold text-zinc-600 dark:text-zinc-300">
-                Live Simulation
+                {projectsDict.liveSimulation}
               </span>
             </div>
           </div>
@@ -83,16 +89,18 @@ export function ProjectsSection() {
           <div className="max-w-2xl mx-auto px-6 md:px-12 py-[var(--section-spacing-mobile)] md:py-[var(--section-spacing)] pb-48">
             <div className="mb-24 space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-zinc-200 dark:bg-zinc-800 text-xs font-mono">
-                SELECTED WORKS 2024-2026
+                {projectsDict.badge}
               </span>
               <h2 className="text-4xl md:text-6xl font-serif leading-tight">
-                Engineering <br />{" "}
-                <span className="italic text-zinc-500">Solutions</span>
+                {projectsDict.title} <br />{" "}
+                <span className="italic text-zinc-500">
+                  {projectsDict.titleItalic}
+                </span>
               </h2>
             </div>
 
             <div className="flex flex-col gap-0">
-              {projects.map((project, index) => (
+              {translatedProjects.map((project, index) => (
                 <div
                   key={project.id}
                   onMouseEnter={() => setActiveProject(project.id)}

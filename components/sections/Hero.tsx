@@ -7,8 +7,11 @@ import DynamicClock from "./hero/DynamicClock";
 import { SystemStatus } from "./hero/SystemStatus";
 import { CursorFollower } from "../ui/cursor-follower";
 import TextScramble from "../ui/text-scramble";
+import { useDictionary } from "@/components/dictionary-provider";
 
 export function Hero() {
+  const { hero } = useDictionary();
+
   return (
     <section className="relative w-full min-h-[110vh] overflow-hidden bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans -mt-16 md:-mt-20 transition-colors duration-500">
       <CursorFollower />
@@ -18,16 +21,16 @@ export function Hero() {
 
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-zinc-200 tracking-tight leading-tight">
-              Creating & <br />
-              developing experiences.
+              {hero.subtitle} <br />
+              {hero.subtitleLine2}
             </h2>
             <div>
               <TextScramble className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 -ml-1 leading-[0.9]">
-                Leonardo
+                {hero.name}
               </TextScramble>
 
               <p className="text-lg md:text-xl font-medium text-zinc-700 dark:text-zinc-300 mt-4 tracking-tight max-w-md leading-relaxed">
-                Software & Product Engineer
+                {hero.role}
               </p>
             </div>
           </div>
@@ -36,14 +39,14 @@ export function Hero() {
             <div className="flex flex-col items-start gap-6 select-none animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <div className="flex flex-col gap-1">
                 <p className="font-mono text-xs tracking-widest text-zinc-500 uppercase mb-2 ml-1">
-                  Scroll down to
+                  {hero.scrollLabel}
                 </p>
                 <div className="flex flex-col">
                   <p className="text-3xl md:text-4xl font-light tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.1]">
-                    see how can I
+                    {hero.ctaLine1}
                   </p>
                   <p className="text-3xl md:text-4xl font-serif italic font-medium tracking-tight text-zinc-800 dark:text-zinc-200 leading-[1.1]">
-                    solve your problem
+                    {hero.ctaLine2Italic}
                   </p>
                 </div>
               </div>

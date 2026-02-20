@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "aboutMe": "关于我",
+    "projects": "项目",
+    "stack": "Stack",
+    "contactMe": "联系我"
+  },
+  "hero": {
+    "subtitle": "创造 &",
+    "subtitleLine2": "构建体验。",
+    "name": "Leonardo",
+    "role": "软件与产品工程师",
+    "scrollLabel": "向下滚动以",
+    "ctaLine1": "看看我如何",
+    "ctaLine2Italic": "解决你的问题"
+  },
+  "about": {
+    "sideLabel": "关于",
+    "sideTitle": "我",
+    "sideTitleLine2": "",
+    "slide1": {
+      "badge": "FULLSTACK 背景",
+      "title": "在",
+      "titleItalic1": "代码",
+      "titleItalic2": "与商业价值之间搭建桥梁",
+      "description": "作为一名 Fullstack 开发者起步，让我具备了理解<strong>如何</strong>运作的技术深度。转向 Product Engineering 让我专注于<strong>为什么</strong>去构建它们。我不仅仅是写代码；我设计能够推动业务扩展的解决方案。"
+    },
+    "slide2": {
+      "badge": "PRODUCT ENGINEERING",
+      "title": "为影响力而优化，",
+      "titleLine2": "而不仅仅是产出。",
+      "stat1Value": "-40%",
+      "stat1Label": "通过架构重构降低核心服务延迟",
+      "stat2Value": "2x",
+      "stat2Label": "通过重构 UX/UI 流程提升用户留存率",
+      "diagramLabel": "系统架构图"
+    },
+    "slide3": {
+      "badge": "STACK 与可扩展性",
+      "title": "可扩展的技术。",
+      "description": "利用现代技术生态构建高韧性应用。我的工具选择以性能、开发者体验和长期可维护性为核心。",
+      "capabilities": {
+        "mobileFirst": { "label": "Mobile First", "desc": "响应式 & 自适应" },
+        "dataDriven": { "label": "Data Driven", "desc": "优化查询" },
+        "cleanCode": { "label": "Clean Code", "desc": "可维护架构" },
+        "uiux": { "label": "UI/UX", "desc": "像素级精准" }
+      }
+    },
+    "progressStart": "开始",
+    "progressEnd": "结束"
+  },
+  "projects": {
+    "badge": "精选项目 2024-2026",
+    "title": "工程化",
+    "titleItalic": "解决方案",
+    "architectureFlow": "架构流程",
+    "liveSimulation": "实时模拟",
+    "items": {
+      "saffira": {
+        "description": "多租户森林智能系统。通过计算机视觉和球面三角学缩短野火响应时间。"
+      },
+      "petly": {
+        "description": "P2P 捐赠平台，直接连接捐赠者与 NGO。支持定期支付与透明追踪。"
+      },
+      "chainedfile": {
+        "description": "Web3 去中心化存储接口。基于 Arweave 协议实现安全、永久文件存储，并支持法币入口。"
+      },
+      "morpho": {
+        "description": "面向 MongoDB 的 Schema Intelligence CLI。自动推断结构、检测版本变化并生成迁移脚本。"
+      }
+    }
+  },
+  "stack": {
+    "label": "技术与专长",
+    "title": "Stack",
+    "description": "按用途分组的工具与技术 —— 从运行引擎到增长杠杆。",
+    "categories": {
+      "theEngine": {
+        "title": "The Engine",
+        "description": "驱动系统的核心运行时与语言 —— 以速度、可靠性和开发体验为选择标准。"
+      },
+      "theInterface": {
+        "title": "The Interface",
+        "description": "用户可见与可感知的层面。为性能与流畅 UX 选择的框架与状态管理。"
+      },
+      "theVault": {
+        "title": "The Vault",
+        "description": "数据所在之处。以查询能力与实时性能为标准选择数据库与平台。"
+      },
+      "theWatchtower": {
+        "title": "The Watchtower",
+        "description": "可观测性与基础设施。保持系统健康、可衡量并随时可部署。"
+      },
+      "theBedrock": {
+        "title": "The Bedrock",
+        "description": "底层基础：系统编程、算法以及对底层原理的深刻理解。"
+      },
+      "theLedger": {
+        "title": "The Ledger",
+        "description": "去中心化协议与不可变存储层。通过区块链与永久数据构建无信任环境。"
+      }
+    },
+    "productMindset": {
+      "label": "产品思维",
+      "quote": "\"我不仅写代码；\n我构建增长杠杆。\"",
+      "description": "从使用 Prometheus 监控系统健康到优化转化漏斗 —— 每一个技术决策都服务于产品。代码是工具，影响力才是目标。"
+    }
+  },
+  "contact": {
+    "title": "联系我",
+    "availableLabel": "可接受合作",
+    "card": {
+      "label": "// 联系方式",
+      "title": "正在建立连接...",
+      "quickMessageLabel": "快速留言",
+      "placeholder": "输入你的消息...",
+      "sending": "> 正在发送数据包...",
+      "sent": "> 数据包已送达 ✓",
+      "cta": "无论是从零构建产品，还是扩展现有系统，",
+      "ctaBold": "让我们聊聊。"
+    }
+  },
+  "footer": {
+    "thankYouLine1": "感谢",
+    "thankYouLine2": "您。",
+    "controlCenter": "// 控制中心",
+    "navigationMatrix": "// 导航矩阵",
+    "contextCaption": "> 现在我可能正在这样工作，但欢迎随时联系，我会尽快回复。",
+    "nav": {
+      "engineering": "工程",
+      "designProduct": "设计与产品",
+      "direct": "直接联系",
+      "resume": "简历"
+    },
+    "systemBar": {
+      "building": "正在构建 Petly 与 ChainedFile",
+      "operational": "所有系统运行正常"
+    }
+  },
+  "notFound": {
+    "title": "未找到",
+    "description": "未能找到请求的资源",
+    "cta": "返回首页"
+  }
+}

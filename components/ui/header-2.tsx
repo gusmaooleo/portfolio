@@ -11,33 +11,23 @@ import { LanguageSelectorDropdown } from "./language-selector-dropdown";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { VersionTag } from "./version-tag";
+import { useDictionary } from "@/components/dictionary-provider";
 
-const NAV_LINKS = [
-  {
-    label: "About me",
-    href: "#about-me",
-  },
-  {
-    label: "Projects",
-    href: "#projects",
-  },
-  {
-    label: "Stack",
-    href: "#stack",
-  },
-  {
-    label: "Contact-me",
-    href: "#contact-me",
-  },
-] as const;
-
-const SECTION_IDS = NAV_LINKS.map((link) => link.href.replace("#", ""));
+const SECTION_IDS = ["about-me", "projects", "stack", "contact-me"];
 
 export function Header() {
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(10);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+  const { nav } = useDictionary();
+
+  const NAV_LINKS = [
+    { label: nav.aboutMe, href: "#about-me" },
+    { label: nav.projects, href: "#projects" },
+    { label: nav.stack, href: "#stack" },
+    { label: nav.contactMe, href: "#contact-me" },
+  ];
 
   React.useEffect(() => {
     setMounted(true);
