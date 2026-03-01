@@ -12,7 +12,7 @@ const contactLinks = [
     label: "Email",
     href: "mailto:leogusmaocf@gmail.com",
     icon: Mail,
-    handle: "leogusmaocf@gmail.com",
+    handle: "leonardo@devleoper.com",
   },
   {
     label: "LinkedIn",

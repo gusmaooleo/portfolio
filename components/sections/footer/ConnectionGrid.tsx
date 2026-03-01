@@ -35,7 +35,7 @@ const linkGroups: LinkGroup[] = [
     title: "Direct",
     links: [
       { label: "Telegram", href: "https://t.me/gusmaooleo" },
-      { label: "Email", href: "mailto:leogusmaocf@gmail.com" },
+      { label: "Email", href: "mailto:leonardo@devleoper.com" },
     ],
   },
 ];
